@@ -3,53 +3,43 @@ import { Check, Star } from "lucide-react";
 const cotas = [
   {
     nome: "PRO",
-    preco: "R$ 50.000",
+    preco: "R$ 9.000",
     cor: "#c0c0c0",
     corBg: "from-[#2a2a2a] to-[#1a1a1a]",
     corBorder: "border-white/20",
     destaque: false,
     items: [
-      "Estande de 15m²",
-      "Menção mestre de cerimônias",
       "Material promocional no kit dos participantes",
-      "2 inscrições para o evento",
-      "Logo nas peças de comunicação",
-      "(redes sociais, materiais impressos e digitais)",
+      "Visibilidade da marca no backdrop",
+      "Visibilidade nas redes sociais",
     ],
   },
   {
     nome: "PREMIUM",
-    preco: "R$ 70.000",
+    preco: "R$ 10.000",
     cor: "#f5a623",
     corBg: "from-[#2a1f0a] to-[#1a1408]",
     corBorder: "border-[#f5a623]/40",
-    destaque: true,
+    destaque: false,
     items: [
-      "Estande de 48m²",
-      "Naming rights do Coffee Center",
-      "Menção mestre de cerimônias",
-      "Vídeo institucional de 1 min no palco",
       "Material promocional no kit dos participantes",
-      "8 inscrições para o evento",
-      "Logo em destaque no backdrop e painéis LED",
-      "Logo em destaque nas peças de comunicação",
+      "Visibilidade da marca no backdrop",
+      "Visibilidade nas redes sociais",
+      "4 convites para o evento",
     ],
   },
   {
     nome: "MASTER",
-    preco: "R$ 120.000",
+    preco: "R$ 12.000",
     cor: "#d4af37",
     corBg: "from-[#2a2510] to-[#1a1808]",
     corBorder: "border-[#d4af37]/40",
-    destaque: false,
+    destaque: true,
     items: [
-      "Estande de 15m²",
-      "Assinatura de um painel",
-      "Menção mestre de cerimônias",
-      "Vídeo institucional de 30\" no palco",
       "Material promocional no kit dos participantes",
-      "4 inscrições para o evento",
-      "Logo nas peças de comunicação",
+      "Visibilidade da marca no backdrop",
+      "Visibilidade nas redes sociais",
+      "8 convites para o evento",
     ],
   },
 ];
@@ -142,7 +132,9 @@ export default function Patrocinio() {
               </ul>
 
               <a
-                href="#contato"
+                href="https://wa.me/5527996008632"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="block w-full text-center py-3.5 rounded-xl font-bold text-sm transition-all"
                 style={{
                   backgroundColor: cota.destaque ? cota.cor : "transparent",
@@ -157,19 +149,34 @@ export default function Patrocinio() {
         </div>
 
         {/* Current sponsors */}
-        <div className="text-center bg-white/5 border border-white/10 rounded-3xl py-10 px-8">
-          <p className="text-white/40 text-sm tracking-widest uppercase mb-6 font-bold">
+        <div className="bg-white/5 border border-white/10 rounded-3xl py-10 px-8">
+          <p className="text-white/40 text-sm tracking-widest uppercase mb-6 font-bold text-center">
             Patrocinadores
           </p>
-          <div className="flex flex-wrap items-center justify-center gap-8">
-            {["SINDIEX", "Avenpesbr", "IMETAME"].map((sponsor, i) => (
+          <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
+            {["Avenpesbr", "IMETAME", "SINDIEX"].map((sponsor, i) => (
               <div
                 key={i}
-                className="bg-white/5 border border-white/10 rounded-xl px-8 py-4 text-white/60 font-black text-lg tracking-widest hover:border-white/20 transition-colors"
+                className="bg-white/5 border border-[#f5a623]/20 rounded-xl px-8 py-4 text-white/70 font-black text-lg tracking-widest hover:border-[#f5a623]/40 transition-colors"
               >
                 {sponsor}
               </div>
             ))}
+          </div>
+          <div className="border-t border-white/10 pt-8">
+            <p className="text-white/30 text-xs tracking-widest uppercase mb-6 font-bold text-center">
+              Apoio
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-4">
+              {["CDL", "Prefeitura de Aracruz", "Portocel", "Vports", "Terca Zilli", "Dotcode.ti"].map((apoio, i) => (
+                <div
+                  key={i}
+                  className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-white/50 font-bold text-sm tracking-widest hover:border-white/20 transition-colors"
+                >
+                  {apoio}
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

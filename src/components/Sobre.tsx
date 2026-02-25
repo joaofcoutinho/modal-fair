@@ -25,8 +25,8 @@ const objetivos = [
 
 const stats = [
   { value: "500+", label: "Participantes por dia" },
-  { value: "2", label: "Dias de evento" },
-  { value: "3", label: "Mesas de palestrantes" },
+  { value: "3", label: "Dias de evento" },
+  { value: "5", label: "Painéis temáticos" },
   { value: "1ª", label: "Edição em Aracruz" },
 ];
 

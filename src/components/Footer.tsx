@@ -48,14 +48,14 @@ export default function Footer() {
               <div className="flex items-start gap-3">
                 <Calendar size={16} className="text-[#f5a623] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/80 text-sm font-semibold">14 e 15 de Maio de 2026</p>
-                  <p className="text-white/40 text-xs">Quinta e Sexta-feira</p>
+                  <p className="text-white/80 text-sm font-semibold">14, 15 e 16 de Outubro de 2026</p>
+                  <p className="text-white/40 text-xs">Quarta, Quinta e Sexta-feira</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
                 <MapPin size={16} className="text-[#f5a623] flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/80 text-sm font-semibold">Sítio Santa Joana</p>
+                  <p className="text-white/80 text-sm font-semibold">Cerimonial 2 — Sítio Santa Joana</p>
                   <p className="text-white/40 text-xs">Aracruz, Espírito Santo</p>
                 </div>
               </div>
@@ -90,15 +90,29 @@ export default function Footer() {
         </div>
 
         {/* Sponsors row */}
-        <div className="border-t border-white/10 pt-8 mb-8">
+        <div className="border-t border-white/10 pt-8 mb-6">
           <p className="text-white/30 text-xs tracking-widest uppercase text-center mb-6 font-bold">
-            Realização e Patrocínio
+            Realização
           </p>
           <div className="flex flex-wrap items-center justify-center gap-6">
-            {["Comissão de Eventos Modal Fair Aracruz", "SINDIEX", "Avenpesbr", "IMETAME"].map(
-              (sponsor, i) => (
+            {["Comissão de Eventos Modal Fair Aracruz"].map((sponsor, i) => (
+              <span key={i} className="text-white/30 text-sm font-bold">
+                {sponsor}
+              </span>
+            ))}
+          </div>
+        </div>
+
+        {/* Apoio row */}
+        <div className="border-t border-white/10 pt-6 mb-8">
+          <p className="text-white/30 text-xs tracking-widest uppercase text-center mb-6 font-bold">
+            Apoio
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6">
+            {["SINDIEX", "CDL", "Prefeitura de Aracruz", "Portocel", "Vports", "Terca Zilli", "Dotcode.ti"].map(
+              (apoio, i) => (
                 <span key={i} className="text-white/30 text-sm font-bold">
-                  {sponsor}
+                  {apoio}
                 </span>
               )
             )}

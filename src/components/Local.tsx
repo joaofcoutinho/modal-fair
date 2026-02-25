@@ -39,7 +39,7 @@ export default function Local() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
-            Venue
+            VEJA NO MAPA
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
             O <span className="text-[#f5a623]">Local</span>

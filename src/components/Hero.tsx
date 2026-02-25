@@ -1,29 +1,35 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { MapPin, Calendar, Users } from "lucide-react";
+import { MapPin, Calendar, Users, MessageCircle } from "lucide-react";
+
+const TARGET = new Date("2026-10-14T20:00:00-03:00"); // Horário de Brasília
+
+function calcTimeLeft() {
+  const diff = TARGET.getTime() - Date.now();
+  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
+  return {
+    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+    minutes: Math.floor((diff / 1000 / 60) % 60),
+    seconds: Math.floor((diff / 1000) % 60),
+  };
+}
 
 export default function Hero() {
+  const [mounted, setMounted] = useState(false);
   const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
 
   useEffect(() => {
-    const target = new Date("2026-05-14T17:00:00");
+    setMounted(true);
+    setTimeLeft(calcTimeLeft());
 
     const interval = setInterval(() => {
-      const now = new Date();
-      const diff = target.getTime() - now.getTime();
-
-      if (diff <= 0) {
+      const next = calcTimeLeft();
+      setTimeLeft(next);
+      if (next.days === 0 && next.hours === 0 && next.minutes === 0 && next.seconds === 0) {
         clearInterval(interval);
-        return;
       }
-
-      setTimeLeft({
-        days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-        hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-        minutes: Math.floor((diff / 1000 / 60) % 60),
-        seconds: Math.floor((diff / 1000) % 60),
-      });
     }, 1000);
 
     return () => clearInterval(interval);
@@ -66,7 +72,7 @@ export default function Hero() {
         <div className="flex flex-wrap items-center justify-center gap-6 mb-12 mt-8">
           <div className="flex items-center gap-2 text-white/90">
             <Calendar size={18} className="text-[#f5a623]" />
-            <span className="font-semibold">14 e 15 / Maio / 2026</span>
+            <span className="font-semibold">14, 15 e 16 / Out / 2026</span>
           </div>
           <div className="w-px h-4 bg-white/30 hidden sm:block" />
           <div className="flex items-center gap-2 text-white/90">
@@ -91,7 +97,7 @@ export default function Hero() {
             <div key={i} className="flex flex-col items-center">
               <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl w-16 sm:w-24 h-16 sm:h-24 flex items-center justify-center">
                 <span className="text-2xl sm:text-4xl font-black text-white tabular-nums">
-                  {String(item.value).padStart(2, "0")}
+                  {mounted ? String(item.value).padStart(2, "0") : "--"}
                 </span>
               </div>
               <span className="text-white/50 text-xs sm:text-sm mt-2 tracking-widest uppercase">
@@ -102,18 +108,30 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
           <a
             href="#inscricao"
             className="px-10 py-4 bg-[#f5a623] text-[#0d1b2e] font-black text-base rounded-full hover:bg-[#e09b1f] transition-all hover:scale-105 shadow-lg shadow-[#f5a623]/30"
           >
-            Garanta sua inscrição
+            Garanta sua vaga
           </a>
           <a
-            href="#sobre"
-            className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold text-base rounded-full hover:bg-white/20 transition-all"
+            href="https://wa.me/5527996008632"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 bg-[#25d366]/20 border border-[#25d366]/50 text-white font-bold text-base rounded-full hover:bg-[#25d366]/30 transition-all flex items-center gap-2"
           >
-            Saiba mais
+            <MessageCircle size={18} />
+            Seja Patrocinador
+          </a>
+          <a
+            href="https://wa.me/552732452608"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold text-base rounded-full hover:bg-white/20 transition-all flex items-center gap-2"
+          >
+            <MessageCircle size={18} />
+            Quero um Stand
           </a>
         </div>
       </div>

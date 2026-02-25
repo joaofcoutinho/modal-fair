@@ -45,7 +45,7 @@ export default function Palestrantes() {
         {/* Header */}
         <div className="text-center mb-16">
           <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
-            Speakers
+            QUEM CONDUZ
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
             Palestrantes <span className="text-[#f5a623]">Confirmados</span>
@@ -60,12 +60,12 @@ export default function Palestrantes() {
         <div className="flex flex-wrap items-center justify-center gap-6 mb-12 py-4 px-8 bg-white/5 border border-white/10 rounded-2xl w-fit mx-auto">
           <div className="flex items-center gap-2 text-white/80">
             <span className="text-[#f5a623]">📅</span>
-            <span className="font-semibold">15/05/2026 — Sexta-feira</span>
+            <span className="font-semibold">15 e 16/10/2026</span>
           </div>
           <div className="w-px h-4 bg-white/20 hidden sm:block" />
           <div className="flex items-center gap-2 text-white/80">
             <span className="text-[#f5a623]">🕙</span>
-            <span className="font-semibold">10h00</span>
+            <span className="font-semibold">A partir das 10h</span>
           </div>
           <div className="w-px h-4 bg-white/20 hidden sm:block" />
           <div className="flex items-center gap-2 text-white/80">
