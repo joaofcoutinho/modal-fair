@@ -22,20 +22,12 @@ export default function Navbar() {
   }, []);
 
   return (
-    <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-[#0d1b2e]/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      }`}
-    >
+    <header className="fixed top-0 left-0 right-0 z-50 bg-[#0d1b2e]/95 backdrop-blur-md shadow-lg border-b border-white/5">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-16">
           {/* Logo */}
-          <a href="#" className="flex items-center gap-3">
-            <ModalFairLogo size={40} />
-            <div className="hidden sm:block">
-              <p className="text-white font-black text-lg leading-none tracking-wide">MODAL FAIR</p>
-              <p className="text-white font-black text-lg leading-none tracking-wide">ARACRUZ</p>
-            </div>
+          <a href="#">
+            <img src="/modalfair.png" alt="Modal Fair Aracruz" className="h-14 w-auto object-contain" />
           </a>
 
           {/* Desktop Nav */}
@@ -97,30 +89,3 @@ export default function Navbar() {
   );
 }
 
-function ModalFairLogo({ size = 48 }: { size?: number }) {
-  return (
-    <svg width={size} height={size} viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <rect x="0" y="0" width="22" height="22" rx="2" fill="transparent" />
-      {/* Top-left: orange arrows */}
-      <g transform="translate(0, 0)">
-        <path d="M18 4 L4 4 L4 18 L10 12 L18 4Z" fill="#f5a623" opacity="0.9"/>
-        <path d="M4 18 L4 4 L18 18 L12 18 L4 18Z" fill="#f5a623" opacity="0.6"/>
-      </g>
-      {/* Top-right: green arrows */}
-      <g transform="translate(26, 0)">
-        <path d="M4 4 L18 4 L18 18 L12 12 L4 4Z" fill="#8dc63f" opacity="0.9"/>
-        <path d="M18 18 L18 4 L4 18 L10 18 L18 18Z" fill="#8dc63f" opacity="0.6"/>
-      </g>
-      {/* Bottom-left: red arrows */}
-      <g transform="translate(0, 26)">
-        <path d="M18 18 L4 18 L4 4 L10 10 L18 18Z" fill="#c0392b" opacity="0.9"/>
-        <path d="M4 4 L4 18 L18 4 L12 4 L4 4Z" fill="#c0392b" opacity="0.6"/>
-      </g>
-      {/* Bottom-right: blue arrows */}
-      <g transform="translate(26, 26)">
-        <path d="M4 18 L18 18 L18 4 L12 10 L4 18Z" fill="#4db8d4" opacity="0.9"/>
-        <path d="M18 4 L18 18 L4 4 L10 4 L18 4Z" fill="#4db8d4" opacity="0.6"/>
-      </g>
-    </svg>
-  );
-}

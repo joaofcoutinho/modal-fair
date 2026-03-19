@@ -57,12 +57,7 @@ export default function Hero() {
 
         {/* Logo + Title */}
         <div className="flex flex-col items-center gap-4 mb-6">
-          <HeroLogo />
-          <h1 className="text-5xl sm:text-7xl font-black text-white leading-none tracking-tight">
-            MODAL FAIR
-            <br />
-            <span className="text-[#f5a623]">ARACRUZ</span>
-          </h1>
+          <img src="/modalfair.png" alt="Modal Fair Aracruz" className="w-64 sm:w-80 object-contain" />
           <p className="text-white/70 text-lg sm:text-xl tracking-widest uppercase">
             1ª Feira de Comércio Exterior, Logística e Portos de Aracruz
           </p>
@@ -151,25 +146,3 @@ export default function Hero() {
   );
 }
 
-function HeroLogo() {
-  return (
-    <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(0, 0)">
-        <path d="M32 6 L6 6 L6 32 L18 20 L32 6Z" fill="#f5a623"/>
-        <path d="M6 32 L6 6 L32 32 L18 32 L6 32Z" fill="#f5a623" opacity="0.6"/>
-      </g>
-      <g transform="translate(42, 0)">
-        <path d="M6 6 L32 6 L32 32 L20 20 L6 6Z" fill="#8dc63f"/>
-        <path d="M32 32 L32 6 L6 32 L20 32 L32 32Z" fill="#8dc63f" opacity="0.6"/>
-      </g>
-      <g transform="translate(0, 42)">
-        <path d="M32 32 L6 32 L6 6 L18 18 L32 32Z" fill="#c0392b"/>
-        <path d="M6 6 L6 32 L32 6 L18 6 L6 6Z" fill="#c0392b" opacity="0.6"/>
-      </g>
-      <g transform="translate(42, 42)">
-        <path d="M6 32 L32 32 L32 6 L20 18 L6 32Z" fill="#4db8d4"/>
-        <path d="M32 6 L32 32 L6 6 L20 6 L32 6Z" fill="#4db8d4" opacity="0.6"/>
-      </g>
-    </svg>
-  );
-}
