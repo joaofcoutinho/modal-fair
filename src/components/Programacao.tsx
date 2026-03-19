@@ -227,11 +227,11 @@ export default function Programacao() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
+          <span className="text-[#4db8d4] text-sm font-bold tracking-widest uppercase mb-4 block">
             Agenda
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Programação <span className="text-[#f5a623]">Completa</span>
+            Programação <span className="text-[#4db8d4]">Completa</span>
           </h2>
           <p className="text-white/40 text-sm">
             14, 15 e 16 de Outubro de 2026 · Cerimonial 2 – Sítio Santa Joana

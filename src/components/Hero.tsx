@@ -45,7 +45,7 @@ export default function Hero() {
             "url('https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1920&q=80')",
         }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b2e]/70 via-[#0d1b2e]/50 to-[#0d1b2e]" />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b2e]/88 via-[#0d1b2e]/80 to-[#0d1b2e]" />
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24 pb-16">
@@ -66,6 +66,12 @@ export default function Hero() {
           <p className="text-white/70 text-lg sm:text-xl tracking-widest uppercase">
             1ª Feira de Comércio Exterior, Logística e Portos de Aracruz
           </p>
+          {/* 4-color brand bar */}
+          <div className="flex gap-2 justify-center mt-4">
+            {["#f5a623", "#8dc63f", "#4db8d4", "#c0392b"].map((cor, i) => (
+              <div key={i} className="w-14 h-1 rounded-full" style={{ backgroundColor: cor }} />
+            ))}
+          </div>
         </div>
 
         {/* Event Info */}

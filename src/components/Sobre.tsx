@@ -24,10 +24,10 @@ const objetivos = [
 ];
 
 const stats = [
-  { value: "500+", label: "Participantes por dia" },
-  { value: "3", label: "Dias de evento" },
-  { value: "5", label: "Painéis temáticos" },
-  { value: "1ª", label: "Edição em Aracruz" },
+  { value: "500+", label: "Participantes por dia", cor: "#f5a623" },
+  { value: "3", label: "Dias de evento", cor: "#8dc63f" },
+  { value: "5", label: "Painéis temáticos", cor: "#4db8d4" },
+  { value: "1ª", label: "Edição em Aracruz", cor: "#c0392b" },
 ];
 
 export default function Sobre() {
@@ -36,6 +36,8 @@ export default function Sobre() {
       {/* Decorative background */}
       <div className="absolute top-0 right-0 w-96 h-96 bg-[#f5a623]/5 rounded-full blur-3xl" />
       <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4db8d4]/5 rounded-full blur-3xl" />
+      <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#8dc63f]/4 rounded-full blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#c0392b]/4 rounded-full blur-3xl" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -61,7 +63,7 @@ export default function Sobre() {
               key={i}
               className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#f5a623]/30 transition-colors"
             >
-              <p className="text-4xl sm:text-5xl font-black text-[#f5a623] mb-2">{stat.value}</p>
+              <p className="text-4xl sm:text-5xl font-black mb-2" style={{ color: stat.cor }}>{stat.value}</p>
               <p className="text-white/60 text-sm">{stat.label}</p>
             </div>
           ))}

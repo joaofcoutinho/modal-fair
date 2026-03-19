@@ -38,11 +38,11 @@ export default function Local() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
+          <span className="text-[#8dc63f] text-sm font-bold tracking-widest uppercase mb-4 block">
             VEJA NO MAPA
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            O <span className="text-[#f5a623]">Local</span>
+            O <span className="text-[#8dc63f]">Local</span>
           </h2>
         </div>
 

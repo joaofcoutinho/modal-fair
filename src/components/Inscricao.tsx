@@ -36,13 +36,13 @@ export default function Inscricao() {
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left side */}
           <div>
-            <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
+            <span className="text-[#4db8d4] text-sm font-bold tracking-widest uppercase mb-4 block">
               Inscrições abertas
             </span>
             <h2 className="text-4xl sm:text-5xl font-black text-white mb-6 leading-tight">
               Garanta sua
               <br />
-              <span className="text-[#f5a623]">vaga agora</span>
+              <span className="text-[#4db8d4]">vaga agora</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-8">
               Não perca a oportunidade de fazer parte do maior evento de comércio

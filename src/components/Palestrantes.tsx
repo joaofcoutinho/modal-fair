@@ -44,11 +44,11 @@ export default function Palestrantes() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-16">
-          <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
+          <span className="text-[#c0392b] text-sm font-bold tracking-widest uppercase mb-4 block">
             QUEM CONDUZ
           </span>
           <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Palestrantes <span className="text-[#f5a623]">Confirmados</span>
+            Palestrantes <span className="text-[#c0392b]">Confirmados</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Especialistas de alto nível para debater o futuro do comércio exterior,
