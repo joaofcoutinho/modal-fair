@@ -1,37 +1,44 @@
 import { MapPin, Calendar, Instagram, Linkedin, Mail } from "lucide-react";
 
+const BRAND_COLORS = ["#f5a623", "#8dc63f", "#4db8d4", "#c0392b"];
+
 export default function Footer() {
   return (
-    <footer className="bg-[#060f1c] border-t border-white/10 pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid lg:grid-cols-4 gap-12 mb-12">
+    <footer style={{ background: "#0a0a0a", borderTop: "1px solid rgba(255,255,255,0.06)" }}>
+      {/* Brand strip */}
+      <div className="flex">
+        {BRAND_COLORS.map((cor, i) => (
+          <div key={i} className="flex-1 h-[2px]" style={{ background: cor }} />
+        ))}
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 lg:px-10 pt-16 pb-8">
+        <div className="grid lg:grid-cols-4 gap-12 mb-16">
+
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
               <FooterLogo />
               <div>
-                <p className="text-white font-black text-lg leading-none">MODAL FAIR</p>
-                <p className="text-white font-black text-lg leading-none">ARACRUZ</p>
+                <p className="text-white font-bold text-base leading-none">MODAL FAIR</p>
+                <p className="text-white/58 font-medium text-xs leading-none mt-1 tracking-widest">ARACRUZ</p>
               </div>
             </div>
-            <p className="text-white/40 text-sm leading-relaxed max-w-sm mb-6">
-              A 1ª Feira de Comércio Exterior, Logística e Portos de Aracruz.
-              Transformando conexões em negócios e investimentos que fortalecem o
-              ecossistema portuário e logístico do Espírito Santo.
+            <p className="text-white/70 text-sm font-light leading-relaxed max-w-sm mb-8">
+              A 1ª Feira de Comércio Exterior, Logística e Portos de Aracruz. Transformando conexões em negócios e investimentos que fortalecem o ecossistema portuário e logístico do Espírito Santo.
             </p>
-
-            {/* Social */}
-            <div className="flex items-center gap-3">
+            <div className="flex items-center gap-2">
               {[
-                { icon: <Instagram size={18} />, label: "Instagram" },
-                { icon: <Linkedin size={18} />, label: "LinkedIn" },
-                { icon: <Mail size={18} />, label: "E-mail" },
+                { icon: <Instagram size={14} />, label: "Instagram" },
+                { icon: <Linkedin size={14} />,  label: "LinkedIn" },
+                { icon: <Mail size={14} />,       label: "E-mail" },
               ].map((social, i) => (
                 <a
                   key={i}
                   href="#"
                   aria-label={social.label}
-                  className="w-10 h-10 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center text-white/50 hover:text-[#f5a623] hover:border-[#f5a623]/30 transition-colors"
+                  className="w-8 h-8 flex items-center justify-center text-white/70 hover:text-white/60 transition-colors"
+                  style={{ border: "1px solid rgba(255,255,255,0.07)" }}
                 >
                   {social.icon}
                 </a>
@@ -41,22 +48,20 @@ export default function Footer() {
 
           {/* Event info */}
           <div>
-            <h4 className="text-white font-bold text-sm tracking-widest uppercase mb-6">
-              O Evento
-            </h4>
+            <h4 className="text-white/58 text-[11px] font-medium tracking-[0.3em] uppercase mb-6">O Evento</h4>
             <div className="space-y-4">
               <div className="flex items-start gap-3">
-                <Calendar size={16} className="text-[#f5a623] flex-shrink-0 mt-0.5" />
+                <Calendar size={13} className="text-white/38 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/80 text-sm font-semibold">14, 15 e 16 de Outubro de 2026</p>
-                  <p className="text-white/40 text-xs">Quarta, Quinta e Sexta-feira</p>
+                  <p className="text-white/78 text-sm font-medium">14, 15 e 16 de Outubro de 2026</p>
+                  <p className="text-white/38 text-xs font-light mt-0.5">Quarta, Quinta e Sexta-feira</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <MapPin size={16} className="text-[#f5a623] flex-shrink-0 mt-0.5" />
+                <MapPin size={13} className="text-white/38 flex-shrink-0 mt-0.5" />
                 <div>
-                  <p className="text-white/80 text-sm font-semibold">Cerimonial 2 — Sítio Santa Joana</p>
-                  <p className="text-white/40 text-xs">Aracruz, Espírito Santo</p>
+                  <p className="text-white/78 text-sm font-medium">Cerimonial 2 — Sítio Santa Joana</p>
+                  <p className="text-white/38 text-xs font-light mt-0.5">Aracruz, Espírito Santo</p>
                 </div>
               </div>
             </div>
@@ -64,23 +69,18 @@ export default function Footer() {
 
           {/* Links */}
           <div>
-            <h4 className="text-white font-bold text-sm tracking-widest uppercase mb-6">
-              Navegação
-            </h4>
+            <h4 className="text-white/58 text-[11px] font-medium tracking-[0.3em] uppercase mb-6">Navegação</h4>
             <ul className="space-y-3">
               {[
-                { href: "#sobre", label: "Sobre o evento" },
-                { href: "#programacao", label: "Programação" },
+                { href: "#sobre",        label: "Sobre o evento" },
+                { href: "#programacao",  label: "Programação" },
                 { href: "#palestrantes", label: "Palestrantes" },
-                { href: "#local", label: "Local" },
-                { href: "#patrocinio", label: "Patrocínio" },
-                { href: "#inscricao", label: "Inscrições" },
+                { href: "#local",        label: "Local" },
+                { href: "#patrocinio",   label: "Patrocínio" },
+                { href: "#inscricao",    label: "Inscrições" },
               ].map((link, i) => (
                 <li key={i}>
-                  <a
-                    href={link.href}
-                    className="text-white/40 hover:text-[#f5a623] transition-colors text-sm"
-                  >
+                  <a href={link.href} className="text-white/70 hover:text-white/78 transition-colors text-sm font-light">
                     {link.label}
                   </a>
                 </li>
@@ -89,38 +89,43 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Sponsors row */}
-        <div className="border-t border-white/10 pt-8 mb-6">
-          <p className="text-white/30 text-xs tracking-widest uppercase text-center mb-6 font-bold">
-            Realização
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {["Comissão de Eventos Modal Fair Aracruz"].map((sponsor, i) => (
-              <span key={i} className="text-white/30 text-sm font-bold">
-                {sponsor}
-              </span>
+        {/* Sponsors */}
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-8 mb-6">
+          <p className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/38 mb-5">Realização</p>
+          <p className="text-white/38 text-sm">Comissão de Eventos Modal Fair Aracruz</p>
+        </div>
+
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-6 mb-10">
+          <p className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/52 mb-6">Apoio</p>
+          <div className="flex flex-wrap items-center gap-6">
+            {[
+              "LOGO.png",
+              "LOGO-1.png",
+              "LOGO-2.png",
+              "LOGO-3.png",
+              "LOGO-4.png",
+              "LOGO-5.png",
+              "LOGO-6.png",
+              "LogoPortocel-Positivo (2).png",
+              "Mais logo.png",
+              "Mais logo-1.png",
+              "Mais logo-2.png",
+              "Mais logo 4.png",
+              "2.png",
+              "3.png",
+            ].map((file, i) => (
+              <img
+                key={i}
+                src={`/logos-apoiadores/logos/${encodeURIComponent(file)}`}
+                alt={`Apoiador ${i + 1}`}
+                className="h-8 w-auto object-contain"
+                style={{ filter: "brightness(0) invert(1)", opacity: 0.45 }}
+              />
             ))}
           </div>
         </div>
 
-        {/* Apoio row */}
-        <div className="border-t border-white/10 pt-6 mb-8">
-          <p className="text-white/30 text-xs tracking-widest uppercase text-center mb-6 font-bold">
-            Apoio
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6">
-            {["SINDIEX", "CDL", "Prefeitura de Aracruz", "Portocel", "Vports", "Terca Zilli", "Dotcode.ti"].map(
-              (apoio, i) => (
-                <span key={i} className="text-white/30 text-sm font-bold">
-                  {apoio}
-                </span>
-              )
-            )}
-          </div>
-        </div>
-
-        {/* Bottom */}
-        <div className="border-t border-white/10 pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-white/30 text-xs">
+        <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/52 text-xs font-light">
           <p>© 2026 Modal Fair Aracruz. Todos os direitos reservados.</p>
           <p>Desenvolvido com Next.js & TypeScript</p>
         </div>
@@ -131,22 +136,22 @@ export default function Footer() {
 
 function FooterLogo() {
   return (
-    <svg width="40" height="40" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(0, 0)">
-        <path d="M18 4 L4 4 L4 18 L10 12 L18 4Z" fill="#f5a623" opacity="0.8"/>
-        <path d="M4 18 L4 4 L18 18 L12 18 L4 18Z" fill="#f5a623" opacity="0.4"/>
+    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <g transform="translate(0,0)">
+        <path d="M18 4 L4 4 L4 18 L10 12 L18 4Z" fill="#f5a623" opacity="0.9"/>
+        <path d="M4 18 L4 4 L18 18 L12 18 L4 18Z" fill="#f5a623" opacity="0.3"/>
       </g>
-      <g transform="translate(26, 0)">
-        <path d="M4 4 L18 4 L18 18 L12 12 L4 4Z" fill="#8dc63f" opacity="0.8"/>
-        <path d="M18 18 L18 4 L4 18 L10 18 L18 18Z" fill="#8dc63f" opacity="0.4"/>
+      <g transform="translate(26,0)">
+        <path d="M4 4 L18 4 L18 18 L12 12 L4 4Z" fill="#8dc63f" opacity="0.9"/>
+        <path d="M18 18 L18 4 L4 18 L10 18 L18 18Z" fill="#8dc63f" opacity="0.3"/>
       </g>
-      <g transform="translate(0, 26)">
-        <path d="M18 18 L4 18 L4 4 L10 10 L18 18Z" fill="#c0392b" opacity="0.8"/>
-        <path d="M4 4 L4 18 L18 4 L12 4 L4 4Z" fill="#c0392b" opacity="0.4"/>
+      <g transform="translate(0,26)">
+        <path d="M18 18 L4 18 L4 4 L10 10 L18 18Z" fill="#c0392b" opacity="0.9"/>
+        <path d="M4 4 L4 18 L18 4 L12 4 L4 4Z" fill="#c0392b" opacity="0.3"/>
       </g>
-      <g transform="translate(26, 26)">
-        <path d="M4 18 L18 18 L18 4 L12 10 L4 18Z" fill="#4db8d4" opacity="0.8"/>
-        <path d="M18 4 L18 18 L4 4 L10 4 L18 4Z" fill="#4db8d4" opacity="0.4"/>
+      <g transform="translate(26,26)">
+        <path d="M4 18 L18 18 L18 4 L12 10 L4 18Z" fill="#4db8d4" opacity="0.9"/>
+        <path d="M18 4 L18 18 L4 4 L10 4 L18 4Z" fill="#4db8d4" opacity="0.3"/>
       </g>
     </svg>
   );

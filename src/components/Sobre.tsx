@@ -1,125 +1,115 @@
 import { Target, TrendingUp, Users, Award } from "lucide-react";
-
-const objetivos = [
-  {
-    icon: <Target size={28} className="text-[#f5a623]" />,
-    titulo: "Objetivo Principal",
-    descricao: "Gerar conexões que se transformem em negócios e investimentos concretos.",
-  },
-  {
-    icon: <TrendingUp size={28} className="text-[#8dc63f]" />,
-    titulo: "Posicionamento Estratégico",
-    descricao: "Posicionar Aracruz como um novo polo portuário e logístico de relevância nacional, destacando seu potencial no comércio exterior.",
-  },
-  {
-    icon: <Users size={28} className="text-[#4db8d4]" />,
-    titulo: "Integração e Diálogo",
-    descricao: "Promover conhecimento, integração e diálogo entre os setores de comércio exterior, logística e portos, estimulando debates qualificados.",
-  },
-  {
-    icon: <Award size={28} className="text-[#c0392b]" />,
-    titulo: "Legado para Aracruz",
-    descricao: "Gerar um legado de desenvolvimento econômico e social para Aracruz, impulsionando oportunidades, inovação e crescimento sustentável.",
-  },
-];
+import Reveal from "./Reveal";
 
 const stats = [
   { value: "500+", label: "Participantes por dia", cor: "#f5a623" },
-  { value: "3", label: "Dias de evento", cor: "#8dc63f" },
-  { value: "5", label: "Painéis temáticos", cor: "#4db8d4" },
-  { value: "1ª", label: "Edição em Aracruz", cor: "#c0392b" },
+  { value: "3",    label: "Dias de evento",        cor: "#8dc63f" },
+  { value: "5",    label: "Painéis temáticos",     cor: "#4db8d4" },
+  { value: "1ª",   label: "Edição em Aracruz",     cor: "#c0392b" },
+];
+
+const objetivos = [
+  { icon: Target,     titulo: "Objetivo Principal",        descricao: "Gerar conexões que se transformem em negócios e investimentos concretos." },
+  { icon: TrendingUp, titulo: "Posicionamento Estratégico", descricao: "Posicionar Aracruz como novo polo portuário e logístico de relevância nacional." },
+  { icon: Users,      titulo: "Integração e Diálogo",       descricao: "Promover conhecimento e diálogo entre os setores de comércio exterior, logística e portos." },
+  { icon: Award,      titulo: "Legado para Aracruz",        descricao: "Gerar legado de desenvolvimento econômico e social, impulsionando inovação e crescimento sustentável." },
+];
+
+const publico = [
+  "Empresas de Logística",
+  "Comércio Exterior",
+  "Operadores Portuários",
+  "Poder Público",
+  "Sindicatos do Setor",
+  "Advogados Especialistas",
 ];
 
 export default function Sobre() {
   return (
-    <section id="sobre" className="py-24 bg-[#0d1b2e] relative overflow-hidden">
-      {/* Decorative background */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#f5a623]/5 rounded-full blur-3xl" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#4db8d4]/5 rounded-full blur-3xl" />
-      <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-[#8dc63f]/4 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-[#c0392b]/4 rounded-full blur-3xl" />
+    <section id="sobre" className="py-28" style={{ background: "#0f0f0f" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
-            O Evento
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Transformando conexões em{" "}
-            <span className="text-[#f5a623]">negócios</span>
-          </h2>
-          <p className="text-white/60 text-lg max-w-3xl mx-auto leading-relaxed">
-            A Modal Fair Aracruz é a <strong className="text-white">1ª Feira de Comércio Exterior, Logística e Portos de Aracruz</strong>,
-            um evento que reunirá empresas, autoridades, sindicatos e especialistas para fortalecer
-            o ecossistema portuário e logístico do Espírito Santo.
-          </p>
+        {/* Section label */}
+        <Reveal>
+          <div className="flex items-center gap-4 mb-16">
+            <div className="h-px flex-1 max-w-12" style={{ background: "rgba(255,255,255,0.12)" }} />
+            <span className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/58">O Evento</span>
+          </div>
+        </Reveal>
+
+        {/* Main heading + intro */}
+        <div className="grid lg:grid-cols-2 gap-16 mb-20 items-start">
+          <Reveal direction="right">
+            <h2 className="text-5xl sm:text-6xl font-bold text-white leading-[1.05]">
+              Transformando<br />
+              conexões em<br />
+              <span style={{ color: "#f5a623" }}>negócios.</span>
+            </h2>
+          </Reveal>
+          <Reveal direction="left" delay={150}>
+            <div className="pt-2">
+              <p className="text-white/75 text-base leading-relaxed font-light mb-6">
+                A Modal Fair Aracruz é a <strong className="text-white/80 font-semibold">1ª Feira de Comércio Exterior, Logística e Portos de Aracruz</strong>, reunindo empresas, autoridades, sindicatos e especialistas para fortalecer o ecossistema portuário e logístico do Espírito Santo.
+              </p>
+              <p className="text-white/58 text-sm leading-relaxed font-light">
+                Um evento criado para gerar conexões reais, debates qualificados e investimentos concretos na região de Aracruz e no Espírito Santo.
+              </p>
+            </div>
+          </Reveal>
         </div>
 
         {/* Stats */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mb-20" style={{ background: "rgba(255,255,255,0.07)" }}>
           {stats.map((stat, i) => (
-            <div
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#f5a623]/30 transition-colors"
-            >
-              <p className="text-4xl sm:text-5xl font-black mb-2" style={{ color: stat.cor }}>{stat.value}</p>
-              <p className="text-white/60 text-sm">{stat.label}</p>
-            </div>
+            <Reveal key={i} delay={i * 100}>
+              <div className="flex flex-col justify-between p-8" style={{ background: "#0f0f0f" }}>
+                <p className="text-5xl font-bold mb-3" style={{ color: stat.cor }}>{stat.value}</p>
+                <p className="text-white/65 text-xs tracking-wide uppercase font-medium">{stat.label}</p>
+              </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Objectives */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {objetivos.map((obj, i) => (
-            <div
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 hover:bg-white/8 hover:border-white/20 transition-all group"
-            >
-              <div className="mb-4 p-3 bg-white/5 rounded-xl w-fit group-hover:scale-110 transition-transform">
-                {obj.icon}
+            <Reveal key={i} delay={i * 100} direction="up">
+              <div className="flex flex-col gap-4 p-6 h-full" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
+                <div className="w-8 h-8 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.07)" }}>
+                  <obj.icon size={16} className="text-white/75" />
+                </div>
+                <div>
+                  <h3 className="text-white font-semibold text-sm mb-2">{obj.titulo}</h3>
+                  <p className="text-white/58 text-sm leading-relaxed font-light">{obj.descricao}</p>
+                </div>
               </div>
-              <h3 className="text-white font-bold text-base mb-3">{obj.titulo}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{obj.descricao}</p>
-            </div>
+            </Reveal>
           ))}
         </div>
 
         {/* Who attends */}
-        <div className="mt-20 bg-gradient-to-r from-[#1a2e4a] to-[#152438] border border-white/10 rounded-3xl p-8 sm:p-12">
-          <div className="grid lg:grid-cols-2 gap-10 items-center">
-            <div>
-              <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
-                Público-alvo
-              </span>
-              <h3 className="text-3xl font-black text-white mb-4">
+        <Reveal direction="up" delay={100}>
+          <div className="grid lg:grid-cols-2 gap-12 p-10 lg:p-14" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
+            <div className="flex flex-col justify-center">
+              <span className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/58 mb-5 block">Público-alvo</span>
+              <h3 className="text-3xl font-bold text-white leading-tight mb-4">
                 Um evento feito para quem move o comércio exterior do estado
               </h3>
-              <p className="text-white/60 leading-relaxed">
-                Reunimos os principais atores do setor em um ambiente pensado para gerar
-                resultados concretos e conexões duradouras.
+              <p className="text-white/58 text-sm font-light leading-relaxed">
+                Reunimos os principais atores do setor em um ambiente pensado para gerar resultados concretos e conexões duradouras.
               </p>
             </div>
-            <div className="grid grid-cols-2 gap-4">
-              {[
-                "Empresas de Logística",
-                "Comércio Exterior",
-                "Operadores Portuários",
-                "Poder Público",
-                "Sindicatos do Setor",
-                "Advogados Especialistas",
-              ].map((item, i) => (
-                <div
-                  key={i}
-                  className="flex items-center gap-3 bg-white/5 rounded-xl px-4 py-3"
-                >
-                  <div className="w-2 h-2 bg-[#f5a623] rounded-full flex-shrink-0" />
-                  <span className="text-white/80 text-sm font-medium">{item}</span>
+            <div className="grid grid-cols-2 gap-3">
+              {publico.map((item, i) => (
+                <div key={i} className="flex items-center gap-3 px-4 py-3" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
+                  <div className="w-1 h-1 rounded-full flex-shrink-0 bg-white/30" />
+                  <span className="text-white/78 text-sm">{item}</span>
                 </div>
               ))}
             </div>
           </div>
-        </div>
+        </Reveal>
+
       </div>
     </section>
   );

@@ -1,148 +1,161 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { MapPin, Calendar, Users, MessageCircle } from "lucide-react";
 
-const TARGET = new Date("2026-10-14T20:00:00-03:00"); // Horário de Brasília
+const BRAND_COLORS = ["#f5a623", "#8dc63f", "#4db8d4", "#c0392b"];
 
-function calcTimeLeft() {
-  const diff = TARGET.getTime() - Date.now();
-  if (diff <= 0) return { days: 0, hours: 0, minutes: 0, seconds: 0 };
-  return {
-    days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-    hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-    minutes: Math.floor((diff / 1000 / 60) % 60),
-    seconds: Math.floor((diff / 1000) % 60),
-  };
+const ease = "cubic-bezier(0.16, 1, 0.3, 1)";
+
+function fadeUp(delay: number) {
+  return { animation: `hero-fade-up 0.8s ${ease} ${delay}s both` };
 }
 
 export default function Hero() {
-  const [mounted, setMounted] = useState(false);
-  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
-
-  useEffect(() => {
-    setMounted(true);
-    setTimeLeft(calcTimeLeft());
-
-    const interval = setInterval(() => {
-      const next = calcTimeLeft();
-      setTimeLeft(next);
-      if (next.days === 0 && next.hours === 0 && next.minutes === 0 && next.seconds === 0) {
-        clearInterval(interval);
-      }
-    }, 1000);
-
-    return () => clearInterval(interval);
-  }, []);
-
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1605745341112-85968b19335b?w=1920&q=80')",
-        }}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: "#0f0f0f" }}>
+
+      <style>{`
+        @keyframes hero-fade-up {
+          from { opacity: 0; transform: translateY(28px); }
+          to   { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes hero-scale-in {
+          from { opacity: 0; transform: scale(0.65); }
+          to   { opacity: 1; transform: scale(1); }
+        }
+        @keyframes hero-fade-in {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes strip-grow {
+          from { transform: scaleX(0); }
+          to   { transform: scaleX(1); }
+        }
+        @keyframes line-grow {
+          from { transform: scaleX(0); opacity: 0; }
+          to   { transform: scaleX(1); opacity: 1; }
+        }
+      `}</style>
+
+      {/* Video background */}
+      <video
+        className="absolute inset-0 w-full h-full object-cover"
+        src="/video-hero.mp4"
+        autoPlay
+        muted
+        loop
+        playsInline
+        style={{ opacity: 0.85, animation: `hero-fade-in 1.2s ease 0.2s both` }}
       />
-      <div className="absolute inset-0 bg-gradient-to-b from-[#0d1b2e]/88 via-[#0d1b2e]/80 to-[#0d1b2e]" />
+
+      {/* Overlay gradients */}
+      <div className="absolute inset-0" style={{ background: "rgba(15,15,15,0.3)" }} />
+      <div className="absolute inset-0 bg-gradient-to-b from-[#0f0f0f]/40 via-transparent to-[#0f0f0f]" />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(0,0,0,0.35) 0%, transparent 100%)" }} />
 
       {/* Content */}
-      <div className="relative z-10 text-center px-4 max-w-5xl mx-auto pt-24 pb-16">
-        {/* Badge */}
-        <div className="inline-flex items-center gap-2 bg-[#f5a623]/20 border border-[#f5a623]/40 text-[#f5a623] text-sm font-semibold px-4 py-2 rounded-full mb-8">
-          <span className="w-2 h-2 bg-[#f5a623] rounded-full animate-pulse" />
-          1ª Edição — 2026
+      <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-24 pb-20 flex flex-col items-center">
+
+        {/* Label */}
+        <div className="flex items-center gap-3 mb-2" style={fadeUp(0.1)}>
+          <div
+            className="h-px w-10"
+            style={{ background: "rgba(255,255,255,0.3)", transformOrigin: "left", animation: `line-grow 0.6s ${ease} 0.1s both` }}
+          />
+          <span className="text-[11px] tracking-[0.4em] uppercase font-semibold" style={{ color: "#8dc63f", textShadow: "0 1px 12px rgba(0,0,0,0.8)" }}>
+            1ª Edição · Outubro 2026
+          </span>
+          <div
+            className="h-px w-10"
+            style={{ background: "rgba(255,255,255,0.3)", transformOrigin: "right", animation: `line-grow 0.6s ${ease} 0.1s both` }}
+          />
         </div>
 
-        {/* Logo + Title */}
-        <div className="flex flex-col items-center gap-4 mb-6">
-          <img src="/modalfair.png" alt="Modal Fair Aracruz" className="w-64 sm:w-80 object-contain" />
-          <p className="text-white/70 text-lg sm:text-xl tracking-widest uppercase">
-            1ª Feira de Comércio Exterior, Logística e Portos de Aracruz
-          </p>
-          {/* 4-color brand bar */}
-          <div className="flex gap-2 justify-center mt-4">
-            {["#f5a623", "#8dc63f", "#4db8d4", "#c0392b"].map((cor, i) => (
-              <div key={i} className="w-14 h-1 rounded-full" style={{ backgroundColor: cor }} />
-            ))}
-          </div>
-        </div>
+        {/* Logo */}
+        <img
+          src="/modalfair.png"
+          alt="Modal Fair Aracruz"
+          className="w-72 sm:w-96 object-contain mb-1"
+          style={{ animation: `hero-scale-in 1s ${ease} 0.25s both` }}
+        />
 
-        {/* Event Info */}
-        <div className="flex flex-wrap items-center justify-center gap-6 mb-12 mt-8">
-          <div className="flex items-center gap-2 text-white/90">
-            <Calendar size={18} className="text-[#f5a623]" />
-            <span className="font-semibold">14, 15 e 16 / Out / 2026</span>
-          </div>
-          <div className="w-px h-4 bg-white/30 hidden sm:block" />
-          <div className="flex items-center gap-2 text-white/90">
-            <MapPin size={18} className="text-[#f5a623]" />
-            <span className="font-semibold">Sítio Santa Joana — Aracruz/ES</span>
-          </div>
-          <div className="w-px h-4 bg-white/30 hidden sm:block" />
-          <div className="flex items-center gap-2 text-white/90">
-            <Users size={18} className="text-[#f5a623]" />
-            <span className="font-semibold">500 participantes/dia</span>
-          </div>
-        </div>
+        {/* Subtitle */}
+        <p
+          className="text-white/90 text-[11px] tracking-[0.35em] uppercase font-semibold mb-8"
+          style={{ textShadow: "0 1px 16px rgba(0,0,0,0.9)", ...fadeUp(0.45) }}
+        >
+          Feira de Comércio Exterior, Logística e Portos de Aracruz
+        </p>
 
-        {/* Countdown */}
-        <div className="flex items-center justify-center gap-4 sm:gap-8 mb-12">
-          {[
-            { value: timeLeft.days, label: "Dias" },
-            { value: timeLeft.hours, label: "Horas" },
-            { value: timeLeft.minutes, label: "Minutos" },
-            { value: timeLeft.seconds, label: "Segundos" },
-          ].map((item, i) => (
-            <div key={i} className="flex flex-col items-center">
-              <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-xl w-16 sm:w-24 h-16 sm:h-24 flex items-center justify-center">
-                <span className="text-2xl sm:text-4xl font-black text-white tabular-nums">
-                  {mounted ? String(item.value).padStart(2, "0") : "--"}
-                </span>
-              </div>
-              <span className="text-white/50 text-xs sm:text-sm mt-2 tracking-widest uppercase">
-                {item.label}
-              </span>
-            </div>
+        {/* Divider */}
+        <div className="flex w-48 mb-10">
+          {BRAND_COLORS.map((cor, i) => (
+            <div
+              key={i}
+              className="flex-1 h-[2px]"
+              style={{ background: cor, transformOrigin: "left", animation: `strip-grow 0.4s ${ease} ${0.55 + i * 0.1}s both` }}
+            />
           ))}
         </div>
 
+        {/* Event meta */}
+        <div
+          className="flex flex-wrap items-center justify-center gap-x-8 gap-y-3 mb-12 text-white/90 text-sm px-6 py-3"
+          style={{ background: "rgba(0,0,0,0.35)", backdropFilter: "blur(8px)", border: "1px solid rgba(255,255,255,0.1)", ...fadeUp(0.7) }}
+        >
+          <div className="flex items-center gap-2">
+            <Calendar size={13} className="text-white/60" />
+            <span>14, 15 e 16 de Outubro de 2026</span>
+          </div>
+          <div className="hidden sm:block h-3 w-px bg-white/20" />
+          <div className="flex items-center gap-2">
+            <MapPin size={13} className="text-white/60" />
+            <span>Sítio Santa Joana — Aracruz/ES</span>
+          </div>
+          <div className="hidden sm:block h-3 w-px bg-white/20" />
+          <div className="flex items-center gap-2">
+            <Users size={13} className="text-white/60" />
+            <span>500 participantes/dia</span>
+          </div>
+        </div>
+
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
-          <a
-            href="#inscricao"
-            className="px-10 py-4 bg-[#f5a623] text-[#0d1b2e] font-black text-base rounded-full hover:bg-[#e09b1f] transition-all hover:scale-105 shadow-lg shadow-[#f5a623]/30"
-          >
-            Garanta sua vaga
-          </a>
-          <a
-            href="https://wa.me/5527996008632"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-4 bg-[#25d366]/20 border border-[#25d366]/50 text-white font-bold text-base rounded-full hover:bg-[#25d366]/30 transition-all flex items-center gap-2"
-          >
-            <MessageCircle size={18} />
-            Seja Patrocinador
-          </a>
-          <a
-            href="https://wa.me/552732452608"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-10 py-4 bg-white/10 backdrop-blur-md border border-white/30 text-white font-bold text-base rounded-full hover:bg-white/20 transition-all flex items-center gap-2"
-          >
-            <MessageCircle size={18} />
-            Quero um Stand
-          </a>
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          {[
+            { href: "#inscricao", label: "Garanta sua vaga", style: { background: "#f5a623", color: "#0f0f0f" }, delay: 0.85 },
+            { href: "https://wa.me/5527996008632", label: "Seja Patrocinador", delay: 0.95 },
+            { href: "https://wa.me/552732452608", label: "Quero um Stand", delay: 1.05 },
+          ].map((cta, i) => (
+            <a
+              key={i}
+              href={cta.href}
+              target={cta.href.startsWith("http") ? "_blank" : undefined}
+              rel={cta.href.startsWith("http") ? "noopener noreferrer" : undefined}
+              className="px-8 py-3 text-sm font-medium rounded-full transition-all flex items-center gap-2 hover:opacity-80"
+              style={{
+                ...(cta.style ?? { border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }),
+                ...fadeUp(cta.delay),
+              }}
+            >
+              {i > 0 && <MessageCircle size={14} />}
+              {cta.label}
+            </a>
+          ))}
         </div>
       </div>
 
-      {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40">
-        <span className="text-xs tracking-widest uppercase">Scroll</span>
-        <div className="w-px h-8 bg-gradient-to-b from-white/40 to-transparent" />
+      {/* Bottom brand strip */}
+      <div className="absolute bottom-0 left-0 right-0 flex">
+        {BRAND_COLORS.map((cor, i) => (
+          <div
+            key={i}
+            className="flex-1 h-[3px]"
+            style={{
+              background: cor,
+              transformOrigin: "left",
+              animation: `strip-grow 0.4s ${ease} ${1.1 + i * 0.12}s both`,
+            }}
+          />
+        ))}
       </div>
     </section>
   );
 }
-

@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Clock, Music, Coffee, Mic, MessageSquare, Utensils, Palette } from "lucide-react";
+import { Music, Coffee, Mic, MessageSquare, Utensils } from "lucide-react";
 
-type Tipo = "plenaria" | "networking" | "social" | "operacional" | "painel";
+type Tipo = "plenaria" | "social" | "operacional" | "painel";
 
 interface Item {
   horario: string;
@@ -12,7 +12,6 @@ interface Item {
   palestrantes?: { nome: string; cargo: string }[];
   mediadores?: string[];
   tema?: string;
-  icon: React.ReactNode;
   tipo: Tipo;
 }
 
@@ -21,7 +20,6 @@ const dia1: Item[] = [
     horario: "20h",
     titulo: "Coquetel de Abertura da MFA",
     descricao: "Abertura oficial da Modal Fair Aracruz com coquetel de boas-vindas",
-    icon: <Music size={20} className="text-[#f5a623]" />,
     tipo: "social",
   },
 ];
@@ -31,13 +29,11 @@ const dia2: Item[] = [
     horario: "9h",
     titulo: "Fala das Autoridades",
     descricao: "Exposição de Artes da Artista Plástica Maria Alice Furtado",
-    icon: <Mic size={20} className="text-[#f5a623]" />,
     tipo: "operacional",
   },
   {
     horario: "10h",
     titulo: "Palestra — Convidado Especial",
-    icon: <Mic size={20} className="text-[#f5a623]" />,
     tipo: "plenaria",
   },
   {
@@ -46,18 +42,16 @@ const dia2: Item[] = [
     tema: "Reforma Tributária, ZPE e SUDENE: Oportunidades fiscais e novos desafios para o desenvolvimento logístico e industrial de Aracruz e região.",
     palestrantes: [
       { nome: "Marcus M. Vicente", cargo: "MVLM Advogados" },
-      { nome: "Luciano Kelly do Nascimento", cargo: "Advogado Especialista em Direito Portuário" },
+      { nome: "Luciano Kelly do Nascimento", cargo: "Direito Portuário" },
       { nome: "Anderson Carvalho", cargo: "IMETAME LOGÍSTICA PORTO" },
       { nome: "Erimar Trindade", cargo: "SINDIEX" },
     ],
     mediadores: ["Abdo Filho", "Ícaro Dominisini"],
-    icon: <MessageSquare size={20} className="text-[#4db8d4]" />,
     tipo: "painel",
   },
   {
     horario: "15h",
     titulo: "Intervalo",
-    icon: <Coffee size={20} className="text-[#8dc63f]" />,
     tipo: "social",
   },
   {
@@ -72,7 +66,6 @@ const dia2: Item[] = [
       { nome: "Henrique Mauri", cargo: "Dotcdode" },
     ],
     mediadores: ["Abdo Filho", "Sebastião V. Neto"],
-    icon: <MessageSquare size={20} className="text-[#4db8d4]" />,
     tipo: "painel",
   },
 ];
@@ -81,7 +74,6 @@ const dia3: Item[] = [
   {
     horario: "9h",
     titulo: "Coffee-break",
-    icon: <Coffee size={20} className="text-[#8dc63f]" />,
     tipo: "social",
   },
   {
@@ -89,19 +81,17 @@ const dia3: Item[] = [
     titulo: "1º Painel",
     tema: "Portos: Motores da Economia Capixaba no Comércio Internacional.",
     palestrantes: [
-      { nome: "Adriana Junger Lacerda", cargo: "Delegada da Alfândega da Receita Federal do ES" },
-      { nome: "Christiane Menezes", cargo: "Gerente da Nova — Agência de Atração de Investimentos" },
-      { nome: "Carla Rios do Amaral", cargo: "Gerente Comercial da VPORTS" },
-      { nome: "Luciana Mattar", cargo: "Mattar Vilela Advogados Associados" },
+      { nome: "Adriana Junger Lacerda", cargo: "Alfândega da Receita Federal / ES" },
+      { nome: "Christiane Menezes", cargo: "Nova — Agência de Atração de Investimentos" },
+      { nome: "Carla Rios do Amaral", cargo: "VPORTS" },
+      { nome: "Luciana Mattar", cargo: "Mattar Vilela Advogados" },
     ],
     mediadores: ["Carla Fregona", "Eder Muller"],
-    icon: <MessageSquare size={20} className="text-[#4db8d4]" />,
     tipo: "painel",
   },
   {
     horario: "12h",
     titulo: "Almoço",
-    icon: <Utensils size={20} className="text-[#8dc63f]" />,
     tipo: "social",
   },
   {
@@ -110,12 +100,11 @@ const dia3: Item[] = [
     tema: "PARKLOG – Plataforma de Exportação do ES.",
     palestrantes: [
       { nome: "Anderson Abreu", cargo: "Diretor Executivo do PARKLOG" },
-      { nome: "José Eduardo Faria de Azevedo", cargo: "Secretário de Desenvolvimento Econômico de Aracruz" },
+      { nome: "José Eduardo F. de Azevedo", cargo: "Secretaria de Desenvolvimento Econômico de Aracruz" },
       { nome: "Valéria Becalli", cargo: "PORTOCEL" },
       { nome: "Bruno Carlesso", cargo: "IMETAME" },
     ],
     mediadores: ["Maurício Xavier", "Felipe Loureiro"],
-    icon: <MessageSquare size={20} className="text-[#4db8d4]" />,
     tipo: "painel",
   },
   {
@@ -125,305 +114,201 @@ const dia3: Item[] = [
     palestrantes: [
       { nome: "Roberta Kato", cargo: "CEO da Kato Soluções Empresariais" },
       { nome: "Pablo Lira", cargo: "Presidente IJSN" },
-      { nome: "Glegson Ninz", cargo: "SENAC (FECOMÉRCIO)" },
-      { nome: "Rafael Henrique G. T. de Freitas", cargo: "COAL (FINDES)" },
+      { nome: "Glegson Ninz", cargo: "SENAC / FECOMÉRCIO" },
+      { nome: "Rafael Henrique G. T. de Freitas", cargo: "COAL / FINDES" },
     ],
     mediadores: ["Larissa Baroni"],
-    icon: <MessageSquare size={20} className="text-[#4db8d4]" />,
     tipo: "painel",
   },
 ];
 
-const tipoColors: Record<Tipo, string> = {
-  plenaria: "border-l-[#f5a623]",
-  painel: "border-l-[#4db8d4]",
-  networking: "border-l-[#4db8d4]",
-  social: "border-l-[#8dc63f]",
-  operacional: "border-l-white/20",
+const tipoCor: Record<Tipo, string> = {
+  plenaria:    "#f5a623",
+  painel:      "#4db8d4",
+  social:      "#8dc63f",
+  operacional: "rgba(255,255,255,0.25)",
 };
 
-const tipoBg: Record<Tipo, string> = {
-  plenaria: "bg-[#f5a623]/8",
-  painel: "bg-[#4db8d4]/8",
-  networking: "bg-[#4db8d4]/8",
-  social: "bg-[#8dc63f]/8",
-  operacional: "bg-white/5",
+const tipoLabel: Record<Tipo, string> = {
+  plenaria:    "Plenária",
+  painel:      "Painel",
+  social:      "Social",
+  operacional: "Abertura",
 };
-
-const eixos = [
-  {
-    numero: "01",
-    titulo: "Reforma Tributária, ZPE e SUDENE",
-    descricao: "Oportunidades fiscais e novos desafios para o desenvolvimento logístico e industrial de Aracruz",
-    cor: "#f5a623",
-  },
-  {
-    numero: "02",
-    titulo: "Raio X do Comércio Exterior Capixaba",
-    descricao: "Espírito Santo como hub logístico e o fim dos incentivos fiscais",
-    cor: "#4db8d4",
-  },
-  {
-    numero: "03",
-    titulo: "Portos: Motores da Economia",
-    descricao: "Os portos capixabas como protagonistas do Comércio Internacional",
-    cor: "#8dc63f",
-  },
-  {
-    numero: "04",
-    titulo: "PARKLOG — Plataforma de Exportação",
-    descricao: "Plataforma de exportação do Agronegócio Brasileiro no Espírito Santo",
-    cor: "#c0392b",
-  },
-  {
-    numero: "05",
-    titulo: "Mercado de Trabalho Competitivo",
-    descricao: "Desafios estruturais e oportunidades para o ES nos próximos anos",
-    cor: "#9b59b6",
-  },
-];
 
 type DiaId = "dia1" | "dia2" | "dia3";
 
+const dias = [
+  { id: "dia1" as const, label: "Abertura", data: "14/10", diaSemana: "Quarta-feira", cor: "#f5a623", itens: dia1 },
+  { id: "dia2" as const, label: "Dia 1",    data: "15/10", diaSemana: "Quinta-feira",  cor: "#4db8d4", itens: dia2 },
+  { id: "dia3" as const, label: "Dia 2",    data: "16/10", diaSemana: "Sexta-feira",   cor: "#8dc63f", itens: dia3 },
+];
+
 export default function Programacao() {
   const [diaSelecionado, setDiaSelecionado] = useState<DiaId>("dia2");
-
-  const dias = [
-    {
-      id: "dia1" as const,
-      label: "Abertura",
-      data: "14/10",
-      diaSemana: "Quarta-feira",
-      cor: "#f5a623",
-      itens: dia1,
-      badge: null,
-    },
-    {
-      id: "dia2" as const,
-      label: "Dia 1",
-      data: "15/10",
-      diaSemana: "Quinta-feira",
-      cor: "#4db8d4",
-      itens: dia2,
-      badge: "Painéis",
-    },
-    {
-      id: "dia3" as const,
-      label: "Dia 2",
-      data: "16/10",
-      diaSemana: "Sexta-feira",
-      cor: "#8dc63f",
-      itens: dia3,
-      badge: "Programação principal",
-    },
-  ];
-
   const diaAtual = dias.find((d) => d.id === diaSelecionado)!;
 
+  const BG = "#0f0f0f";
+  const BORDER = "rgba(255,255,255,0.08)";
+
   return (
-    <section id="programacao" className="py-24 bg-[#091525] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
+    <section id="programacao" className="py-32" style={{ background: BG }}>
+      <div className="max-w-5xl mx-auto px-6 lg:px-10">
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-[#4db8d4] text-sm font-bold tracking-widest uppercase mb-4 block">
-            Agenda
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Programação <span className="text-[#4db8d4]">Completa</span>
-          </h2>
-          <p className="text-white/40 text-sm">
-            14, 15 e 16 de Outubro de 2026 · Cerimonial 2 – Sítio Santa Joana
-          </p>
-        </div>
-
-        {/* Eixos Temáticos */}
-        <div className="mb-16">
-          <h3 className="text-white/40 text-xs font-bold tracking-widest uppercase mb-6 text-center">
-            Eixos Temáticos
-          </h3>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {eixos.map((eixo, i) => (
-              <div
-                key={i}
-                className="bg-white/5 border border-white/10 rounded-2xl p-5 hover:border-white/20 transition-colors"
-              >
-                <span className="text-4xl font-black opacity-20 block mb-3" style={{ color: eixo.cor }}>
-                  {eixo.numero}
-                </span>
-                <h4 className="text-white font-bold text-sm mb-1">{eixo.titulo}</h4>
-                <p className="text-white/40 text-xs leading-relaxed">{eixo.descricao}</p>
-              </div>
-            ))}
+        {/* Header — two columns */}
+        <div className="grid lg:grid-cols-2 gap-10 items-end mb-20">
+          <div>
+            <div className="flex items-center gap-4 mb-6">
+              <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.15)" }} />
+              <span className="text-[11px] tracking-[0.4em] uppercase font-semibold" style={{ color: "#4db8d4" }}>Programação Oficial</span>
+            </div>
+            <h2 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+              Três dias de<br />
+              <span style={{ color: "#4db8d4" }}>debates e conexões</span>
+            </h2>
+          </div>
+          <div className="lg:pb-2">
+            <p className="text-white/55 text-base leading-relaxed font-light mb-6">
+              Uma programação densa e estratégica, com painéis de alto nível, palestrantes convidados e momentos de networking pensados para quem move o comércio exterior e a logística do Espírito Santo.
+            </p>
+            <div className="flex items-center gap-2 text-white/38 text-sm">
+              <div className="w-1 h-1 rounded-full" style={{ background: "#4db8d4" }} />
+              <span>14, 15 e 16 de Outubro de 2026 · Sítio Santa Joana, Aracruz/ES</span>
+            </div>
           </div>
         </div>
 
         {/* Day selector */}
-        <div className="mb-10">
-          <p className="text-white/30 text-xs tracking-widest uppercase font-bold text-center mb-4">
-            Selecione o dia
-          </p>
-          <div className="grid grid-cols-3 gap-3">
-            {dias.map((dia) => {
-              const ativo = diaSelecionado === dia.id;
-              return (
-                <button
-                  key={dia.id}
-                  onClick={() => setDiaSelecionado(dia.id)}
-                  className="relative flex flex-col items-start gap-2 p-4 rounded-2xl border-2 transition-all duration-200 text-left"
-                  style={
-                    ativo
-                      ? { borderColor: dia.cor, backgroundColor: `${dia.cor}15` }
-                      : { borderColor: "rgba(255,255,255,0.1)", backgroundColor: "rgba(255,255,255,0.03)" }
-                  }
+        <div className="flex gap-0 mb-16" style={{ borderBottom: `1px solid ${BORDER}` }}>
+          {dias.map((dia) => {
+            const ativo = diaSelecionado === dia.id;
+            return (
+              <button
+                key={dia.id}
+                onClick={() => setDiaSelecionado(dia.id)}
+                className="relative px-8 py-5 text-left transition-all duration-200 flex-1"
+                style={{ background: "transparent", border: "none" }}
+              >
+                {/* Active underline */}
+                {ativo && (
+                  <div className="absolute bottom-0 left-0 right-0 h-[2px]" style={{ background: dia.cor }} />
+                )}
+                <div
+                  className="text-2xl font-bold tabular-nums leading-none mb-1.5"
+                  style={{ color: ativo ? dia.cor : "rgba(255,255,255,0.2)" }}
                 >
-                  {dia.badge && (
-                    <span
-                      className="text-[9px] font-black tracking-widest uppercase px-2 py-0.5 rounded-full"
-                      style={{ backgroundColor: `${dia.cor}25`, color: dia.cor }}
-                    >
-                      {dia.badge}
-                    </span>
-                  )}
-
-                  <span
-                    className="text-xl font-black tabular-nums"
-                    style={{ color: ativo ? dia.cor : "rgba(255,255,255,0.25)" }}
-                  >
-                    {dia.data}
-                  </span>
-                  <div className="flex flex-col">
-                    <span className={`font-black text-sm ${ativo ? "text-white" : "text-white/40"}`}>
-                      {dia.label}
-                    </span>
-                    <span className="text-white/30 text-xs">{dia.diaSemana}</span>
-                  </div>
-
-                  <div className="flex gap-1 flex-wrap">
-                    {dia.itens.map((_, idx) => (
-                      <div
-                        key={idx}
-                        className="w-1.5 h-1.5 rounded-full"
-                        style={{ backgroundColor: ativo ? dia.cor : "rgba(255,255,255,0.15)" }}
-                      />
-                    ))}
-                  </div>
-
-                  {ativo && (
-                    <div
-                      className="absolute top-3 right-3 w-2 h-2 rounded-full"
-                      style={{ backgroundColor: dia.cor }}
-                    />
-                  )}
-                </button>
-              );
-            })}
-          </div>
+                  {dia.data}
+                </div>
+                <div
+                  className="text-xs font-semibold uppercase tracking-wider leading-none mb-1"
+                  style={{ color: ativo ? "rgba(255,255,255,0.9)" : "rgba(255,255,255,0.3)" }}
+                >
+                  {dia.label}
+                </div>
+                <div className="text-[11px] font-light" style={{ color: "rgba(255,255,255,0.25)" }}>
+                  {dia.diaSemana}
+                </div>
+              </button>
+            );
+          })}
         </div>
 
-        {/* Schedule items */}
-        <div className="space-y-3">
-          {diaAtual.itens.map((item, i) => (
-            <div
-              key={`${diaSelecionado}-${i}`}
-              className={`border-l-4 ${tipoColors[item.tipo]} ${tipoBg[item.tipo]} border border-white/10 rounded-r-2xl p-5 hover:border-white/20 transition-all`}
-            >
-              <div className="flex items-start gap-4">
-                {/* Icon */}
-                <div className="flex-shrink-0 mt-0.5 p-2 bg-white/5 rounded-xl">
-                  {item.icon}
+        {/* Timeline */}
+        <div className="relative">
+          {diaAtual.itens.map((item, i) => {
+            const cor = tipoCor[item.tipo];
+            const isLast = i === diaAtual.itens.length - 1;
+            const isPainel = item.tipo === "painel";
+
+            return (
+              <div key={`${diaSelecionado}-${i}`} className="grid gap-6 mb-4" style={{ gridTemplateColumns: "64px 1px 1fr" }}>
+
+                {/* Time */}
+                <div className="pt-7 text-right pr-2">
+                  <span className="text-sm font-bold tabular-nums" style={{ color: diaAtual.cor }}>
+                    {item.horario}
+                  </span>
                 </div>
 
-                {/* Content */}
-                <div className="flex-1 min-w-0">
-                  <div className="flex items-center gap-3 mb-1 flex-wrap">
-                    <span
-                      className="text-xs font-black tracking-widest"
-                      style={{ color: diaAtual.cor }}
-                    >
-                      {item.horario}
-                    </span>
-                    {item.tipo === "painel" && (
+                {/* Vertical line + dot */}
+                <div className="flex flex-col items-center">
+                  <div
+                    className="w-3 h-3 rounded-full flex-shrink-0 mt-[26px]"
+                    style={{ background: cor, boxShadow: `0 0 0 3px ${BG}, 0 0 0 5px ${cor}35` }}
+                  />
+                  {!isLast && (
+                    <div className="w-px flex-1 mt-2" style={{ background: `linear-gradient(to bottom, ${cor}40, transparent)` }} />
+                  )}
+                </div>
+
+                {/* Card */}
+                <div className="pb-6 pt-4">
+                  <div
+                    className="p-6"
+                    style={{
+                      background: isPainel ? "rgba(77,184,212,0.05)" : "rgba(255,255,255,0.03)",
+                      border: `1px solid ${isPainel ? "rgba(77,184,212,0.12)" : BORDER}`,
+                      borderLeft: `3px solid ${cor}`,
+                    }}
+                  >
+                    {/* Badge + hora mobile */}
+                    <div className="flex items-center justify-between mb-3">
                       <span
-                        className="text-[10px] font-bold px-2 py-0.5 rounded-full"
-                        style={{ backgroundColor: `${diaAtual.cor}20`, color: diaAtual.cor }}
+                        className="text-[10px] font-bold tracking-[0.25em] uppercase px-2 py-1"
+                        style={{ background: `${cor}18`, color: cor }}
                       >
-                        PAINEL
+                        {tipoLabel[item.tipo]}
                       </span>
+                    </div>
+
+                    <h4 className="text-white font-bold text-base leading-snug mb-2">{item.titulo}</h4>
+
+                    {item.descricao && (
+                      <p className="text-white/52 text-sm leading-relaxed">{item.descricao}</p>
+                    )}
+
+                    {item.tema && (
+                      <p className="text-white/60 text-sm leading-relaxed mt-3 font-light italic">
+                        "{item.tema}"
+                      </p>
+                    )}
+
+                    {item.palestrantes && item.palestrantes.length > 0 && (
+                      <div className="mt-5 pt-5" style={{ borderTop: "1px solid rgba(255,255,255,0.07)" }}>
+                        <p className="text-[10px] font-bold tracking-[0.3em] uppercase mb-4" style={{ color: cor }}>
+                          Convidados
+                        </p>
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                          {item.palestrantes.map((p, j) => (
+                            <div key={j} className="flex items-start gap-3">
+                              <div
+                                className="w-7 h-7 flex-shrink-0 flex items-center justify-center text-[10px] font-bold"
+                                style={{ background: `${cor}20`, color: cor }}
+                              >
+                                {p.nome.charAt(0)}
+                              </div>
+                              <div>
+                                <p className="text-white/85 text-xs font-semibold leading-tight">{p.nome}</p>
+                                <p className="text-white/42 text-[11px] font-light mt-0.5">{p.cargo}</p>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        {item.mediadores && item.mediadores.length > 0 && (
+                          <p className="text-white/35 text-xs mt-4 font-light">
+                            <span className="text-white/50 font-medium">Mediação —</span>{" "}
+                            {item.mediadores.join(" & ")}
+                          </p>
+                        )}
+                      </div>
                     )}
                   </div>
-
-                  <h4 className="text-white font-bold text-base mb-2">{item.titulo}</h4>
-
-                  {item.descricao && (
-                    <p className="text-white/50 text-sm leading-relaxed mb-3">{item.descricao}</p>
-                  )}
-
-                  {/* Tema */}
-                  {item.tema && (
-                    <div className="bg-white/5 border border-white/10 rounded-xl p-3 mb-3">
-                      <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-1">Tema</p>
-                      <p className="text-white/70 text-sm leading-relaxed italic">"{item.tema}"</p>
-                    </div>
-                  )}
-
-                  {/* Palestrantes */}
-                  {item.palestrantes && item.palestrantes.length > 0 && (
-                    <div className="mb-3">
-                      <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-2">Palestrantes</p>
-                      <div className="flex flex-col gap-1.5">
-                        {item.palestrantes.map((p, j) => (
-                          <div key={j} className="flex items-start gap-2">
-                            <div
-                              className="w-1.5 h-1.5 rounded-full mt-1.5 flex-shrink-0"
-                              style={{ backgroundColor: diaAtual.cor }}
-                            />
-                            <span className="text-sm">
-                              <span className="text-white font-semibold">{p.nome}</span>
-                              <span className="text-white/40"> — {p.cargo}</span>
-                            </span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-
-                  {/* Mediadores */}
-                  {item.mediadores && item.mediadores.length > 0 && (
-                    <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-white/30 text-[10px] font-bold uppercase tracking-widest">
-                        Mediadores:
-                      </span>
-                      {item.mediadores.map((m, j) => (
-                        <span
-                          key={j}
-                          className="text-xs px-2 py-0.5 rounded-full bg-white/5 border border-white/10 text-white/50"
-                        >
-                          {m}
-                        </span>
-                      ))}
-                    </div>
-                  )}
                 </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
-        {/* Legend */}
-        <div className="mt-10 flex flex-wrap gap-6 justify-center">
-          {[
-            { cor: "#f5a623", label: "Plenária" },
-            { cor: "#4db8d4", label: "Painéis" },
-            { cor: "#8dc63f", label: "Social / Coffee" },
-          ].map((item, i) => (
-            <div key={i} className="flex items-center gap-2 text-white/40 text-xs">
-              <div className="w-3 h-3 rounded-sm" style={{ backgroundColor: item.cor }} />
-              {item.label}
-            </div>
-          ))}
-        </div>
       </div>
     </section>
   );

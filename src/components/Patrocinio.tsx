@@ -1,12 +1,11 @@
-import { Check, Star } from "lucide-react";
+import { Check } from "lucide-react";
 
 const cotas = [
   {
     nome: "PRO",
     preco: "R$ 9.000",
-    cor: "#c0c0c0",
-    corBg: "from-[#2a2a2a] to-[#1a1a1a]",
-    corBorder: "border-white/20",
+    cor: "#4db8d4",
+    bg: "rgba(77,184,212,0.06)",
     destaque: false,
     items: [
       "Material promocional no kit dos participantes",
@@ -18,8 +17,7 @@ const cotas = [
     nome: "PREMIUM",
     preco: "R$ 10.000",
     cor: "#f5a623",
-    corBg: "from-[#2a1f0a] to-[#1a1408]",
-    corBorder: "border-[#f5a623]/40",
+    bg: "rgba(245,166,35,0.06)",
     destaque: false,
     items: [
       "Material promocional no kit dos participantes",
@@ -31,9 +29,8 @@ const cotas = [
   {
     nome: "MASTER",
     preco: "R$ 12.000",
-    cor: "#d4af37",
-    corBg: "from-[#2a2510] to-[#1a1808]",
-    corBorder: "border-[#d4af37]/40",
+    cor: "#8dc63f",
+    bg: "rgba(141,198,63,0.06)",
     destaque: true,
     items: [
       "Material promocional no kit dos participantes",
@@ -45,87 +42,72 @@ const cotas = [
 ];
 
 const beneficios = [
-  {
-    titulo: "Posicionamento Estratégico",
-    descricao: "Posicionamento no novo eixo portuário do Espírito Santo",
-  },
-  {
-    titulo: "Relacionamento Qualificado",
-    descricao: "Relacionamento direto com decisores e empresas do comércio exterior",
-  },
-  {
-    titulo: "Geração de Leads",
-    descricao: "Leads qualificados e presença no centro das negociações do setor",
-  },
+  { titulo: "Posicionamento Estratégico", descricao: "Posicionamento no novo eixo portuário do Espírito Santo" },
+  { titulo: "Relacionamento Qualificado", descricao: "Relacionamento direto com decisores e empresas do comércio exterior" },
+  { titulo: "Geração de Leads", descricao: "Leads qualificados e presença no centro das negociações do setor" },
 ];
 
 export default function Patrocinio() {
   return (
-    <section id="patrocinio" className="py-24 bg-[#0d1b2e] relative overflow-hidden">
-      <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-[#f5a623]/3 rounded-full blur-3xl" />
+    <section id="patrocinio" className="py-28" style={{ background: "#0f0f0f" }}>
+      <div className="max-w-7xl mx-auto px-6 lg:px-10">
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-16">
-          <span className="text-[#f5a623] text-sm font-bold tracking-widest uppercase mb-4 block">
-            Patrocine
-          </span>
-          <h2 className="text-4xl sm:text-5xl font-black text-white mb-6">
-            Proposta de <span className="text-[#f5a623]">Patrocínio</span>
+        {/* Section label */}
+        <div className="flex items-center gap-4 mb-16">
+          <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.12)" }} />
+          <span className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/58">Patrocine</span>
+        </div>
+
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 mb-16">
+          <h2 className="text-5xl sm:text-6xl font-bold text-white leading-tight">
+            Proposta de<br />
+            <span style={{ color: "#f5a623" }}>Patrocínio</span>
           </h2>
-          <p className="text-white/60 text-lg max-w-2xl mx-auto">
+          <p className="text-white/65 text-sm leading-relaxed max-w-sm font-light lg:text-right">
             Posicione sua marca no centro do maior evento de comércio exterior e portos de Aracruz.
           </p>
         </div>
 
-        {/* Why Sponsor */}
-        <div className="grid sm:grid-cols-3 gap-6 mb-20">
+        {/* Benefits row */}
+        <div className="grid sm:grid-cols-3 gap-px mb-16" style={{ background: "rgba(255,255,255,0.07)" }}>
           {beneficios.map((b, i) => (
-            <div
-              key={i}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center hover:border-[#f5a623]/30 transition-colors"
-            >
-              <div className="w-12 h-12 bg-[#f5a623]/10 border border-[#f5a623]/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-                <Star size={20} className="text-[#f5a623]" />
-              </div>
-              <h3 className="text-white font-bold text-base mb-2">{b.titulo}</h3>
-              <p className="text-white/50 text-sm leading-relaxed">{b.descricao}</p>
+            <div key={i} className="p-8" style={{ background: "#0f0f0f" }}>
+              <p className="text-xs text-white/70 font-medium mb-1">0{i + 1}</p>
+              <h3 className="text-white font-semibold text-sm mb-3">{b.titulo}</h3>
+              <p className="text-white/58 text-sm font-light leading-relaxed">{b.descricao}</p>
             </div>
           ))}
         </div>
 
         {/* Pricing cards */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid lg:grid-cols-3 gap-6 mb-16">
           {cotas.map((cota, i) => (
             <div
               key={i}
-              className={`relative bg-gradient-to-b ${cota.corBg} border ${cota.corBorder} rounded-3xl p-8 ${
-                cota.destaque ? "scale-105 shadow-2xl" : ""
-              } transition-transform hover:scale-[1.02]`}
+              className="relative flex flex-col p-8"
+              style={{
+                background: cota.bg,
+                border: `1px solid ${cota.cor}30`,
+                borderTop: `2px solid ${cota.cor}`,
+              }}
             >
-              {cota.destaque && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-[#f5a623] text-[#0d1b2e] text-xs font-black px-4 py-1.5 rounded-full">
-                  MAIS POPULAR
-                </div>
-              )}
 
-              <div className="mb-6">
-                <p className="text-sm font-bold tracking-widest uppercase mb-2" style={{ color: cota.cor }}>
+              <div className="mb-8">
+                <p className="text-[11px] font-semibold tracking-[0.3em] uppercase mb-3" style={{ color: cota.cor }}>
                   {cota.nome}
                 </p>
-                <p className="text-4xl font-black text-white">{cota.preco}</p>
+                <p className="text-4xl font-bold text-white">{cota.preco}</p>
+                {cota.destaque && (
+                  <p className="text-[11px] text-white/52 mt-1 tracking-wide uppercase">Mais escolhido</p>
+                )}
               </div>
 
-              <div
-                className="h-px mb-6 opacity-20"
-                style={{ background: cota.cor }}
-              />
+              <div className="h-px mb-6" style={{ background: "rgba(255,255,255,0.07)" }} />
 
-              <ul className="space-y-3 mb-8">
+              <ul className="space-y-3 mb-8 flex-1">
                 {cota.items.map((item, j) => (
-                  <li key={j} className="flex items-start gap-3 text-white/70 text-sm">
-                    <Check size={16} className="flex-shrink-0 mt-0.5" style={{ color: cota.cor }} />
+                  <li key={j} className="flex items-start gap-3 text-white/70 text-sm font-light">
+                    <Check size={13} className="flex-shrink-0 mt-0.5" style={{ color: cota.cor }} />
                     {item}
                   </li>
                 ))}
@@ -135,12 +117,8 @@ export default function Patrocinio() {
                 href="https://wa.me/5527996008632"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full text-center py-3.5 rounded-xl font-bold text-sm transition-all"
-                style={{
-                  backgroundColor: cota.destaque ? cota.cor : "transparent",
-                  color: cota.destaque ? "#0d1b2e" : cota.cor,
-                  border: `2px solid ${cota.cor}`,
-                }}
+                className="block w-full text-center py-3 text-xs font-semibold tracking-wide uppercase transition-all hover:opacity-80"
+                style={{ border: "1px solid rgba(255,255,255,0.15)", color: "rgba(255,255,255,0.6)" }}
               >
                 Quero patrocinar
               </a>
@@ -148,37 +126,7 @@ export default function Patrocinio() {
           ))}
         </div>
 
-        {/* Current sponsors */}
-        <div className="bg-white/5 border border-white/10 rounded-3xl py-10 px-8">
-          <p className="text-white/40 text-sm tracking-widest uppercase mb-6 font-bold text-center">
-            Patrocinadores
-          </p>
-          <div className="flex flex-wrap items-center justify-center gap-6 mb-10">
-            {["Avenpesbr", "IMETAME", "SINDIEX"].map((sponsor, i) => (
-              <div
-                key={i}
-                className="bg-white/5 border border-[#f5a623]/20 rounded-xl px-8 py-4 text-white/70 font-black text-lg tracking-widest hover:border-[#f5a623]/40 transition-colors"
-              >
-                {sponsor}
-              </div>
-            ))}
-          </div>
-          <div className="border-t border-white/10 pt-8">
-            <p className="text-white/30 text-xs tracking-widest uppercase mb-6 font-bold text-center">
-              Apoio
-            </p>
-            <div className="flex flex-wrap items-center justify-center gap-4">
-              {["CDL", "Prefeitura de Aracruz", "Portocel", "Vports", "Terca Zilli", "Dotcode.ti"].map((apoio, i) => (
-                <div
-                  key={i}
-                  className="bg-white/5 border border-white/10 rounded-xl px-6 py-3 text-white/50 font-bold text-sm tracking-widest hover:border-white/20 transition-colors"
-                >
-                  {apoio}
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );

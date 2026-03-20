@@ -2,11 +2,11 @@ import Navbar from "@/components/Navbar";
 import Hero from "@/components/Hero";
 import Sobre from "@/components/Sobre";
 import Programacao from "@/components/Programacao";
+import Apoiadores from "@/components/Apoiadores";
 import Palestrantes from "@/components/Palestrantes";
 import Local from "@/components/Local";
 import Patrocinio from "@/components/Patrocinio";
 import Stand from "@/components/Stand";
-import Inscricao from "@/components/Inscricao";
 import Footer from "@/components/Footer";
 
 export default function Home() {
@@ -15,12 +15,12 @@ export default function Home() {
       <Navbar />
       <Hero />
       <Sobre />
-      <Programacao />
+      <Apoiadores />
       <Palestrantes />
+      <Programacao />
       <Local />
       <Patrocinio />
       <Stand />
-      <Inscricao />
       <Footer />
     </main>
   );
