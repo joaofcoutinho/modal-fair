@@ -25,11 +25,33 @@ export default function Navbar() {
     <header
       className="fixed top-0 left-0 right-0 z-50 transition-all duration-500"
       style={{
-        background: isScrolled ? "rgba(15,15,15,0.97)" : "transparent",
-        backdropFilter: isScrolled ? "blur(20px)" : "none",
-        borderBottom: isScrolled ? "1px solid rgba(255,255,255,0.06)" : "none",
+        background: isScrolled ? "rgba(15,15,15,0.92)" : "transparent",
+        backdropFilter: isScrolled ? "blur(24px)" : "none",
       }}
     >
+      <style>{`
+        @keyframes nav-grow {
+          from { transform: scaleX(0); opacity: 0; }
+          to   { transform: scaleX(1); opacity: 1; }
+        }
+        @keyframes nav-slide-down {
+          from { transform: translateY(-100%); opacity: 0; }
+          to   { transform: translateY(0); opacity: 1; }
+        }
+      `}</style>
+
+      {/* Bottom border that grows left→right on scroll */}
+      {isScrolled && (
+        <div
+          className="absolute bottom-0 left-0 right-0 h-px"
+          style={{
+            background: "linear-gradient(to right, #f5a623, #8dc63f, #4db8d4, #c0392b)",
+            transformOrigin: "left",
+            animation: "nav-grow 0.5s cubic-bezier(0.16,1,0.3,1) forwards",
+          }}
+        />
+      )}
+
       <div className="max-w-7xl mx-auto px-6 lg:px-10">
         <div className="flex items-center justify-between h-16">
           <a href="#">
