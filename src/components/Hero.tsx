@@ -79,7 +79,7 @@ export default function Hero() {
 
         {/* Subtitle */}
         <p
-          className="text-white/90 text-[11px] tracking-[0.35em] uppercase font-semibold mb-8"
+          className="text-white/90 text-[10px] sm:text-[11px] tracking-[0.25em] sm:tracking-[0.35em] uppercase font-semibold mb-8 px-2 text-center"
           style={{ textShadow: "0 1px 16px rgba(0,0,0,0.9)", ...fadeUp(0.45) }}
         >
           Feira de Comércio Exterior, Logística e Portos de Aracruz

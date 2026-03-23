@@ -26,11 +26,11 @@ export default function Inscricao() {
           <span className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/58">Inscrições</span>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16 items-start">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
           {/* Left */}
           <div>
-            <h2 className="text-5xl font-bold text-white leading-tight mb-6">
+            <h2 className="text-4xl sm:text-5xl font-bold text-white leading-tight mb-6">
               Garanta sua<br />
               <span style={{ color: "#4db8d4" }}>vaga agora</span>
             </h2>
@@ -77,33 +77,33 @@ export default function Inscricao() {
             ) : (
               <div className="p-8 lg:p-10">
                 <h3 className="text-white font-semibold text-base mb-8">Cadastre seu interesse</h3>
-                <form onSubmit={handleSubmit} className="space-y-5">
+                <form onSubmit={handleSubmit} className="space-y-4">
+                  {/* Nome */}
                   {[
-                    { label: "Nome completo *", name: "nome",    type: "text",  req: true,  placeholder: "Seu nome",         span: 2 },
-                    { label: "Empresa *",        name: "empresa", type: "text",  req: true,  placeholder: "Sua empresa",      span: 1 },
-                    { label: "Cargo",            name: "cargo",   type: "text",  req: false, placeholder: "Seu cargo",        span: 1 },
-                    { label: "E-mail *",         name: "email",   type: "email", req: true,  placeholder: "seu@email.com",    span: 2 },
-                    { label: "WhatsApp",         name: "telefone",type: "tel",   req: false, placeholder: "(27) 99999-9999",  span: 2 },
+                    { label: "Nome completo *", name: "nome",    type: "text",  req: true,  placeholder: "Seu nome" },
+                    { label: "E-mail *",         name: "email",   type: "email", req: true,  placeholder: "seu@email.com" },
+                    { label: "WhatsApp",         name: "telefone",type: "tel",   req: false, placeholder: "(27) 99999-9999" },
                   ].map((field) => (
-                    <div key={field.name} className={field.span === 1 ? "inline-block w-[calc(50%-8px)] odd:mr-4" : "block"}>
-                      <label className="text-white/52 text-[11px] font-medium uppercase tracking-wider block mb-2">
-                        {field.label}
-                      </label>
-                      <input
-                        type={field.type}
-                        name={field.name}
-                        required={field.req}
-                        value={(form as Record<string,string>)[field.name]}
-                        onChange={handleChange}
-                        placeholder={field.placeholder}
-                        className="w-full px-4 py-3 text-white text-sm font-light focus:outline-none transition-colors placeholder:text-white/38"
-                        style={{
-                          background: "#0f0f0f",
-                          border: "1px solid rgba(255,255,255,0.08)",
-                        }}
-                      />
+                    <div key={field.name}>
+                      <label className="text-white/52 text-[11px] font-medium uppercase tracking-wider block mb-2">{field.label}</label>
+                      <input type={field.type} name={field.name} required={field.req} value={(form as Record<string,string>)[field.name]} onChange={handleChange} placeholder={field.placeholder}
+                        className="w-full px-4 py-3 text-white text-sm font-light focus:outline-none placeholder:text-white/38"
+                        style={{ background: "#0f0f0f", border: "1px solid rgba(255,255,255,0.08)" }} />
                     </div>
                   ))}
+                  <div className="grid grid-cols-2 gap-4">
+                    {[
+                      { label: "Empresa *", name: "empresa", type: "text", req: true,  placeholder: "Sua empresa" },
+                      { label: "Cargo",     name: "cargo",   type: "text", req: false, placeholder: "Seu cargo" },
+                    ].map((field) => (
+                      <div key={field.name}>
+                        <label className="text-white/52 text-[11px] font-medium uppercase tracking-wider block mb-2">{field.label}</label>
+                        <input type={field.type} name={field.name} required={field.req} value={(form as Record<string,string>)[field.name]} onChange={handleChange} placeholder={field.placeholder}
+                          className="w-full px-4 py-3 text-white text-sm font-light focus:outline-none placeholder:text-white/38"
+                          style={{ background: "#0f0f0f", border: "1px solid rgba(255,255,255,0.08)" }} />
+                      </div>
+                    ))}
+                  </div>
 
                   <button
                     type="submit"

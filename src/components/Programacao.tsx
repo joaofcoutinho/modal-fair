@@ -162,7 +162,7 @@ export default function Programacao() {
               <div className="h-px w-12" style={{ background: "rgba(255,255,255,0.15)" }} />
               <span className="text-[11px] tracking-[0.4em] uppercase font-semibold" style={{ color: "#4db8d4" }}>Programação Oficial</span>
             </div>
-            <h2 className="text-5xl lg:text-6xl font-bold text-white leading-tight">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
               Três dias de<br />
               <span style={{ color: "#4db8d4" }}>debates e conexões</span>
             </h2>
@@ -171,9 +171,38 @@ export default function Programacao() {
             <p className="text-white/55 text-base leading-relaxed font-light mb-6">
               Uma programação densa e estratégica, com painéis de alto nível, palestrantes convidados e momentos de networking pensados para quem move o comércio exterior e a logística do Espírito Santo.
             </p>
-            <div className="flex items-center gap-2 text-white/38 text-sm">
-              <div className="w-1 h-1 rounded-full" style={{ background: "#4db8d4" }} />
-              <span>14, 15 e 16 de Outubro de 2026 · Sítio Santa Joana, Aracruz/ES</span>
+            <div className="grid grid-cols-3 mt-4" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
+
+              <div className="flex items-center gap-3 px-4 py-4" style={{ borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 flex-shrink-0">
+                  <rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+                <div>
+                  <p className="text-white font-semibold text-xs leading-tight">14–16 Out. 2026</p>
+                  <p className="text-white/38 text-[11px]">Três dias</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 px-4 py-4" style={{ borderRight: "1px solid rgba(255,255,255,0.07)" }}>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 flex-shrink-0">
+                  <circle cx="12" cy="12" r="9"/><polyline points="12 7 12 12 15.5 12"/>
+                </svg>
+                <div>
+                  <p className="text-white font-semibold text-xs leading-tight">A partir das 10h</p>
+                  <p className="text-white/38 text-[11px]">Abertura</p>
+                </div>
+              </div>
+
+              <div className="flex items-center gap-3 px-4 py-4">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-white/40 flex-shrink-0">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/><circle cx="12" cy="9" r="2.5"/>
+                </svg>
+                <div>
+                  <p className="text-white font-semibold text-xs leading-tight">Sítio Santa Joana</p>
+                  <p className="text-white/38 text-[11px]">Aracruz, ES</p>
+                </div>
+              </div>
+
             </div>
           </div>
         </div>
@@ -186,7 +215,7 @@ export default function Programacao() {
               <button
                 key={dia.id}
                 onClick={() => setDiaSelecionado(dia.id)}
-                className="relative px-8 py-5 text-left transition-all duration-200 flex-1"
+                className="relative px-3 sm:px-8 py-4 sm:py-5 text-left transition-all duration-200 flex-1"
                 style={{ background: "transparent", border: "none" }}
               >
                 {/* Active underline */}
@@ -221,7 +250,7 @@ export default function Programacao() {
             const isPainel = item.tipo === "painel";
 
             return (
-              <div key={`${diaSelecionado}-${i}`} className="grid gap-6 mb-4" style={{ gridTemplateColumns: "64px 1px 1fr" }}>
+              <div key={`${diaSelecionado}-${i}`} className="grid gap-4 mb-4" style={{ gridTemplateColumns: "44px 1px 1fr" }}>
 
                 {/* Time */}
                 <div className="pt-7 text-right pr-2">

@@ -23,7 +23,7 @@ export default function Apoiadores() {
   return (
     <section
       className="relative"
-      style={{ background: "#8dc63f", overflow: "hidden", padding: "80px 0" }}
+      style={{ background: "#8dc63f", overflow: "hidden", padding: "28px 0" }}
     >
       <style>{`
         @keyframes marquee-scroll {
@@ -39,7 +39,7 @@ export default function Apoiadores() {
         style={{ background: "linear-gradient(to left, #8dc63f, transparent)" }} />
 
       {/* Label */}
-      <p className="text-center text-sm tracking-[0.4em] uppercase font-semibold text-white mb-10">
+      <p className="text-center text-sm tracking-[0.4em] uppercase font-semibold text-white mb-6">
         Apoio & Parceiros
       </p>
 

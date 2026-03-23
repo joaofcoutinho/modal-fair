@@ -9,10 +9,10 @@ const stats = [
 ];
 
 const objetivos = [
-  { icon: Target,     titulo: "Objetivo Principal",        descricao: "Gerar conexões que se transformem em negócios e investimentos concretos." },
-  { icon: TrendingUp, titulo: "Posicionamento Estratégico", descricao: "Posicionar Aracruz como novo polo portuário e logístico de relevância nacional." },
-  { icon: Users,      titulo: "Integração e Diálogo",       descricao: "Promover conhecimento e diálogo entre os setores de comércio exterior, logística e portos." },
-  { icon: Award,      titulo: "Legado para Aracruz",        descricao: "Gerar legado de desenvolvimento econômico e social, impulsionando inovação e crescimento sustentável." },
+  { icon: Target,     cor: "#f5a623", titulo: "Objetivo Principal",        descricao: "Gerar conexões que se transformem em negócios e investimentos concretos." },
+  { icon: TrendingUp, cor: "#4db8d4", titulo: "Posicionamento Estratégico", descricao: "Posicionar Aracruz como novo polo portuário e logístico de relevância nacional." },
+  { icon: Users,      cor: "#8dc63f", titulo: "Integração e Diálogo",       descricao: "Promover conhecimento e diálogo entre os setores de comércio exterior, logística e portos." },
+  { icon: Award,      cor: "#c0392b", titulo: "Legado para Aracruz",        descricao: "Gerar legado de desenvolvimento econômico e social, impulsionando inovação e crescimento sustentável." },
 ];
 
 const publico = [
@@ -40,7 +40,7 @@ export default function Sobre() {
         {/* Main heading + intro */}
         <div className="grid lg:grid-cols-2 gap-16 mb-20 items-start">
           <Reveal direction="right">
-            <h2 className="text-5xl sm:text-6xl font-bold text-white leading-[1.05]">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-[1.05]">
               Transformando<br />
               conexões em<br />
               <span style={{ color: "#f5a623" }}>negócios.</span>
@@ -62,8 +62,8 @@ export default function Sobre() {
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-px mb-20" style={{ background: "rgba(255,255,255,0.07)" }}>
           {stats.map((stat, i) => (
             <Reveal key={i} delay={i * 100}>
-              <div className="flex flex-col justify-between p-8" style={{ background: "#0f0f0f" }}>
-                <p className="text-5xl font-bold mb-3" style={{ color: stat.cor }}>{stat.value}</p>
+              <div className="flex flex-col justify-between p-5 sm:p-8" style={{ background: "#0f0f0f" }}>
+                <p className="text-4xl sm:text-5xl font-bold mb-3" style={{ color: stat.cor }}>{stat.value}</p>
                 <p className="text-white/65 text-xs tracking-wide uppercase font-medium">{stat.label}</p>
               </div>
             </Reveal>
@@ -74,11 +74,13 @@ export default function Sobre() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20">
           {objetivos.map((obj, i) => (
             <Reveal key={i} delay={i * 100} direction="up">
-              <div className="flex flex-col gap-4 p-6 h-full" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
-                <div className="w-8 h-8 flex items-center justify-center" style={{ background: "rgba(255,255,255,0.07)" }}>
-                  <obj.icon size={16} className="text-white/75" />
+              <div className="flex flex-col gap-4 p-6 h-full relative overflow-hidden" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
+                <div className="absolute -top-5 -right-5 w-20 h-20 rounded-full pointer-events-none" style={{ background: obj.cor, opacity: 0.07, filter: "blur(20px)" }} />
+                <div className="w-9 h-9 flex items-center justify-center flex-shrink-0" style={{ border: `1px solid ${obj.cor}40`, background: `${obj.cor}10` }}>
+                  <obj.icon size={16} style={{ color: obj.cor }} />
                 </div>
                 <div>
+                  <div className="w-5 h-[2px] mb-3" style={{ background: obj.cor }} />
                   <h3 className="text-white font-semibold text-sm mb-2">{obj.titulo}</h3>
                   <p className="text-white/58 text-sm leading-relaxed font-light">{obj.descricao}</p>
                 </div>
@@ -89,7 +91,7 @@ export default function Sobre() {
 
         {/* Who attends */}
         <Reveal direction="up" delay={100}>
-          <div className="grid lg:grid-cols-2 gap-12 p-10 lg:p-14" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
+          <div className="grid lg:grid-cols-2 gap-8 p-6 sm:p-10 lg:p-14" style={{ background: "#141414", border: "1px solid rgba(255,255,255,0.07)" }}>
             <div className="flex flex-col justify-center">
               <span className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/58 mb-5 block">Público-alvo</span>
               <h3 className="text-3xl font-bold text-white leading-tight mb-4">
@@ -100,12 +102,16 @@ export default function Sobre() {
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">
-              {publico.map((item, i) => (
-                <div key={i} className="flex items-center gap-3 px-4 py-3" style={{ border: "1px solid rgba(255,255,255,0.07)" }}>
-                  <div className="w-1 h-1 rounded-full flex-shrink-0 bg-white/30" />
-                  <span className="text-white/78 text-sm">{item}</span>
-                </div>
-              ))}
+              {publico.map((item, i) => {
+                const cores = ["#f5a623","#4db8d4","#8dc63f","#c0392b"];
+                const cor = cores[i % cores.length];
+                return (
+                  <div key={i} className="flex items-center gap-3 px-4 py-3" style={{ border: `1px solid ${cor}20`, background: `${cor}06` }}>
+                    <div className="w-1.5 h-1.5 rounded-full flex-shrink-0" style={{ background: cor, opacity: 0.7 }} />
+                    <span className="text-white/78 text-sm">{item}</span>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </Reveal>
