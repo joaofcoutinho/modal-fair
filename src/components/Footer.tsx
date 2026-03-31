@@ -18,11 +18,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-3 mb-6">
-              <FooterLogo />
-              <div>
-                <p className="text-white font-bold text-base leading-none">MODAL FAIR</p>
-                <p className="text-white/58 font-medium text-xs leading-none mt-1 tracking-widest">ARACRUZ</p>
-              </div>
+              <img src="/modalfair.png" alt="Modal Fair Aracruz" className="h-12 w-auto object-contain" style={{ filter: "brightness(0) invert(1)" }} />
             </div>
             <p className="text-white/70 text-sm font-light leading-relaxed max-w-sm mb-8">
               A 1ª Feira de Comércio Exterior, Logística e Portos de Aracruz. Transformando conexões em negócios e investimentos que fortalecem o ecossistema portuário e logístico do Espírito Santo.
@@ -99,27 +95,38 @@ export default function Footer() {
           <p className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/52 mb-6">Apoio</p>
           <div className="flex flex-wrap items-center gap-6">
             {[
-              "LOGO.png",
-              "LOGO-1.png",
-              "LOGO-2.png",
-              "LOGO-3.png",
-              "LOGO-4.png",
-              "LOGO-5.png",
-              "LOGO-6.png",
-              "LogoPortocel-Positivo (2).png",
-              "Mais logo.png",
-              "Mais logo-1.png",
-              "Mais logo-2.png",
-              "Mais logo 4.png",
-              "2.png",
-              "3.png",
-            ].map((file, i) => (
+              { file: "LOGO.png",    large: true },
+              { file: "LOGO-1.png" },
+              { file: "LOGO-3.png" },
+              { file: "LOGO-4.png" },
+              { file: "LOGO-5.png",  large: true },
+              { file: "LOGO-6.png" },
+              { file: "LogoPortocel-Positivo (2).png" },
+              { file: "Mais logo.png", large: true },
+              { file: "Mais logo-1.png" },
+              { file: "Mais logo-2.png" },
+              { file: "Mais logo 4.png" },
+              { file: "2.png" },
+              { file: "logo-camara-aracruz.png" },
+              { file: "logo-amear.png" },
+              { file: "logo-vigano.png" },
+              { file: "MVLM.png", large: true },
+              { file: "1.png", folder: "/logos-add/" },
+              { file: "2.png", folder: "/logos-add/" },
+              { file: "3.png", folder: "/logos-add/", large: true },
+              { file: "4.png", folder: "/logos-add/", large: true },
+            ].map(({ file, large, folder }, i) => (
               <img
                 key={i}
-                src={`/logos-apoiadores/logos/${encodeURIComponent(file)}`}
-                alt={`Apoiador ${i + 1}`}
-                className="h-8 w-auto object-contain"
-                style={{ filter: "brightness(0) invert(1)", opacity: 0.45 }}
+                src={`${folder ?? "/logos-apoiadores/logos/"}${encodeURIComponent(file)}`}
+                alt={file.replace(".png", "")}
+                style={{
+                  height: large ? 44 : 32,
+                  width: "auto",
+                  objectFit: "contain",
+                  filter: "brightness(0) invert(1)",
+                  opacity: large ? 0.7 : 0.45,
+                }}
               />
             ))}
           </div>
@@ -134,25 +141,3 @@ export default function Footer() {
   );
 }
 
-function FooterLogo() {
-  return (
-    <svg width="36" height="36" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <g transform="translate(0,0)">
-        <path d="M18 4 L4 4 L4 18 L10 12 L18 4Z" fill="#f5a623" opacity="0.9"/>
-        <path d="M4 18 L4 4 L18 18 L12 18 L4 18Z" fill="#f5a623" opacity="0.3"/>
-      </g>
-      <g transform="translate(26,0)">
-        <path d="M4 4 L18 4 L18 18 L12 12 L4 4Z" fill="#8dc63f" opacity="0.9"/>
-        <path d="M18 18 L18 4 L4 18 L10 18 L18 18Z" fill="#8dc63f" opacity="0.3"/>
-      </g>
-      <g transform="translate(0,26)">
-        <path d="M18 18 L4 18 L4 4 L10 10 L18 18Z" fill="#c0392b" opacity="0.9"/>
-        <path d="M4 4 L4 18 L18 4 L12 4 L4 4Z" fill="#c0392b" opacity="0.3"/>
-      </g>
-      <g transform="translate(26,26)">
-        <path d="M4 18 L18 18 L18 4 L12 10 L4 18Z" fill="#4db8d4" opacity="0.9"/>
-        <path d="M18 4 L18 18 L4 4 L10 4 L18 4Z" fill="#4db8d4" opacity="0.3"/>
-      </g>
-    </svg>
-  );
-}

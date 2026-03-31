@@ -1,20 +1,26 @@
 "use client";
 
 const logos = [
-  { file: "LOGO.png",                        alt: "Apoiador" },
+  { file: "LOGO.png",                        alt: "IJSN",                    zoom: true },
   { file: "LOGO-1.png",                      alt: "Apoiador" },
-  { file: "LOGO-2.png",                      alt: "Apoiador" },
   { file: "LOGO-3.png",                      alt: "Apoiador" },
   { file: "LOGO-4.png",                      alt: "Apoiador" },
-  { file: "LOGO-5.png",                      alt: "Apoiador" },
+  { file: "LOGO-5.png",                      alt: "Furtado Nemer",           zoom: true },
   { file: "LOGO-6.png",                      alt: "Apoiador" },
+  { file: "MVLM.png",                        alt: "MVLM Advogados",          zoom: true },
   { file: "LogoPortocel-Positivo (2).png",   alt: "Portocel" },
-  { file: "Mais logo.png",                   alt: "Apoiador" },
+  { file: "Mais logo.png",                   alt: "Dominisini Fardin",       zoom: true },
   { file: "Mais logo-1.png",                 alt: "Apoiador" },
   { file: "Mais logo-2.png",                 alt: "Apoiador" },
   { file: "Mais logo 4.png",                 alt: "Apoiador" },
-  { file: "2.png",                           alt: "Apoiador" },
-  { file: "3.png",                           alt: "Apoiador" },
+  { file: "2.png",                           alt: "Prefeitura de Aracruz" },
+  { file: "logo-camara-aracruz.png",         alt: "Câmara Municipal de Aracruz" },
+  { file: "logo-amear.png",                  alt: "AMEAR" },
+  { file: "logo-vigano.png",                 alt: "Vigano" },
+  { file: "1.png", alt: "Avenpesbr",           folder: "/logos-add/" },
+  { file: "2.png", alt: "Apoiador",             folder: "/logos-add/" },
+  { file: "3.png", alt: "Dialoges",             folder: "/logos-add/", zoom: true },
+  { file: "4.png", alt: "Autoridade Portuária", folder: "/logos-add/", zoom: true },
 ];
 
 export default function Apoiadores() {
@@ -58,15 +64,15 @@ export default function Apoiadores() {
           {track.map((logo, i) => (
             <div
               key={i}
-              style={{ flexShrink: 0, height: 120, display: "flex", alignItems: "center", justifyContent: "center" }}
+              style={{ flexShrink: 0, height: logo.zoom ? 170 : 120, display: "flex", alignItems: "center", justifyContent: "center" }}
             >
               <img
-                src={`/logos-apoiadores/logos/${encodeURIComponent(logo.file)}`}
+                src={`${logo.folder ?? "/logos-apoiadores/logos/"}${encodeURIComponent(logo.file)}`}
                 alt={logo.alt}
                 style={{
                   height: "100%",
                   width: "auto",
-                  maxWidth: 280,
+                  maxWidth: 320,
                   objectFit: "contain",
                   filter: "brightness(0) invert(1)",
                   opacity: 1,

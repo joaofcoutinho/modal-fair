@@ -26,6 +26,11 @@ const dia1: Item[] = [
 
 const dia2: Item[] = [
   {
+    horario: "8h30",
+    titulo: "Coffee-break",
+    tipo: "social",
+  },
+  {
     horario: "9h",
     titulo: "Fala das Autoridades",
     descricao: "Exposição de Artes da Artista Plástica Maria Alice Furtado",
@@ -39,40 +44,35 @@ const dia2: Item[] = [
   {
     horario: "14h",
     titulo: "1º Painel",
-    tema: "Reforma Tributária, ZPE e SUDENE: Oportunidades fiscais e novos desafios para o desenvolvimento logístico e industrial de Aracruz e região.",
+    tema: "Espírito Santo: Desafios Estruturais para um Mercado de Trabalho Competitivo e de Oportunidades para os próximos anos.",
     palestrantes: [
-      { nome: "Marcus M. Vicente", cargo: "MVLM Advogados" },
-      { nome: "Luciano Kelly do Nascimento", cargo: "Direito Portuário" },
-      { nome: "Anderson Carvalho", cargo: "IMETAME LOGÍSTICA PORTO" },
-      { nome: "Erimar Trindade", cargo: "SINDIEX" },
+      { nome: "Roberta Kato", cargo: "CEO da Kato Consultoria Empresarial" },
+      { nome: "Pablo Lira", cargo: "Diretor Geral do Instituto Jones dos Santos Neves" },
+      { nome: "Glegson Ninz", cargo: "SENAC / FECOMÉRCIO" },
+      { nome: "Rafael Henrique G. T. de Freitas", cargo: "FINDES" },
+      { nome: "Jean Pedrini", cargo: "Câmara Municipal de Aracruz" },
     ],
-    mediadores: ["Abdo Filho", "Ícaro Dominisini"],
+    mediadores: ["Larissa Baroni", "Guilherme Loureiro"],
     tipo: "painel",
   },
   {
     horario: "15h",
-    titulo: "Intervalo",
-    tipo: "social",
-  },
-  {
-    horario: "16h",
     titulo: "2º Painel",
-    tema: "Raio-X do Comércio Exterior Capixaba tendo o Espírito Santo como Hub Logístico e o Fim dos Incentivos Fiscais.",
+    tema: "PARKLOG – Plataforma de Exportação do ES.",
     palestrantes: [
-      { nome: "Samir Nemer", cargo: "FURTADO NEMER ADVOGADOS" },
-      { nome: "Alexandre Malta", cargo: "Presidente da Avenpesbr" },
-      { nome: "Sidemar Acosta", cargo: "Presidente do SINDIEX" },
-      { nome: "Paulo Alves", cargo: "TERCA ZILLI Armazéns Gerais" },
-      { nome: "Henrique Mauri", cargo: "Dotcdode" },
+      { nome: "Anderson Abreu", cargo: "Diretor Executivo do PARKLOG/ES" },
+      { nome: "José Eduardo F. de Azevedo", cargo: "Secretário de Desenvolvimento Econômico de Aracruz" },
+      { nome: "Valéria Becalli", cargo: "Diretora Executiva da AMEAR" },
+      { nome: "Bruno Carlesso", cargo: "Diretor Jurídico da IMETAME" },
     ],
-    mediadores: ["Abdo Filho", "Sebastião V. Neto"],
+    mediadores: ["Maurício Xavier", "Filipe Loureiro"],
     tipo: "painel",
   },
 ];
 
 const dia3: Item[] = [
   {
-    horario: "9h",
+    horario: "8h30",
     titulo: "Coffee-break",
     tipo: "social",
   },
@@ -81,12 +81,26 @@ const dia3: Item[] = [
     titulo: "1º Painel",
     tema: "Portos: Motores da Economia Capixaba no Comércio Internacional.",
     palestrantes: [
-      { nome: "Adriana Junger Lacerda", cargo: "Alfândega da Receita Federal / ES" },
-      { nome: "Christiane Menezes", cargo: "Nova — Agência de Atração de Investimentos" },
-      { nome: "Carla Rios do Amaral", cargo: "VPORTS" },
-      { nome: "Luciana Mattar", cargo: "Mattar Vilela Advogados" },
+      { nome: "Adriana Junger Lacerda", cargo: "Delegada da Alfândega da Receita Federal do ES" },
+      { nome: "Christiane Menezes", cargo: "Gerente Executiva da Agência Nova ES" },
+      { nome: "Carla Rios do Amaral", cargo: "Gerente Comercial da VPORTS" },
+      { nome: "Luciana Mattar", cargo: "Advogada do Mattar Vilela Advogados Associados" },
     ],
     mediadores: ["Carla Fregona", "Eder Muller"],
+    tipo: "painel",
+  },
+  {
+    horario: "11h",
+    titulo: "2º Painel",
+    tema: "Raio-X do Comércio Exterior Capixaba e o Fim dos Incentivos Fiscais.",
+    palestrantes: [
+      { nome: "Samir Nemer", cargo: "Advogado do Furtado Nemer Advogados Associados" },
+      { nome: "Alexandre Malta", cargo: "Diretor de Relações Institucionais da Agência Nova ES" },
+      { nome: "Sidemar Acosta", cargo: "Presidente do SINDIEX" },
+      { nome: "Paulo Alves", cargo: "Diretor Executivo do TERCA ZILLI Armazéns Gerais" },
+      { nome: "Henrique Mauri", cargo: "CEO da Dotcode Tecnologia" },
+    ],
+    mediadores: ["Abdo Filho", "Sebastião V. Neto"],
     tipo: "painel",
   },
   {
@@ -95,29 +109,17 @@ const dia3: Item[] = [
     tipo: "social",
   },
   {
-    horario: "14h30",
-    titulo: "2º Painel",
-    tema: "PARKLOG – Plataforma de Exportação do ES.",
-    palestrantes: [
-      { nome: "Anderson Abreu", cargo: "Diretor Executivo do PARKLOG" },
-      { nome: "José Eduardo F. de Azevedo", cargo: "Secretaria de Desenvolvimento Econômico de Aracruz" },
-      { nome: "Valéria Becalli", cargo: "PORTOCEL" },
-      { nome: "Bruno Carlesso", cargo: "IMETAME" },
-    ],
-    mediadores: ["Maurício Xavier", "Felipe Loureiro"],
-    tipo: "painel",
-  },
-  {
-    horario: "16h",
+    horario: "14h",
     titulo: "3º Painel",
-    tema: "Espírito Santo: Desafios Estruturais para um Mercado de Trabalho Competitivo e de Oportunidades para os próximos anos.",
+    tema: "Reforma Tributária, ZPE e SUDENE: Oportunidades fiscais e novos desafios para o desenvolvimento logístico e industrial de Aracruz e região.",
     palestrantes: [
-      { nome: "Roberta Kato", cargo: "CEO da Kato Soluções Empresariais" },
-      { nome: "Pablo Lira", cargo: "Presidente IJSN" },
-      { nome: "Glegson Ninz", cargo: "SENAC / FECOMÉRCIO" },
-      { nome: "Rafael Henrique G. T. de Freitas", cargo: "COAL / FINDES" },
+      { nome: "Marcus M. Vicente", cargo: "Sócio fundador do MVLM Advogados Associados" },
+      { nome: "Luciano Kelly do Nascimento", cargo: "Advogado Especialista em Direito Marítimo e Portuário" },
+      { nome: "Alexandre Bilot Mori", cargo: "Gerente Executivo da PORTOCEL" },
+      { nome: "Anderson Carvalho", cargo: "Diretor Executivo do IMETAME LOGÍSTICA PORTO" },
+      { nome: "Erimar Trindade", cargo: "Vice-Presidente do SINDIEX" },
     ],
-    mediadores: ["Larissa Baroni"],
+    mediadores: ["Luciana Mattar", "Ícaro Dominisini"],
     tipo: "painel",
   },
 ];
@@ -318,7 +320,7 @@ export default function Programacao() {
                               </div>
                               <div>
                                 <p className="text-white/85 text-xs font-semibold leading-tight">{p.nome}</p>
-                                <p className="text-white/42 text-[11px] font-light mt-0.5">{p.cargo}</p>
+                                <p className="text-white/65 text-[11px] mt-0.5">{p.cargo}</p>
                               </div>
                             </div>
                           ))}

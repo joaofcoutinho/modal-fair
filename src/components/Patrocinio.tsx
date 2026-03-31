@@ -6,7 +6,7 @@ import Reveal from "./Reveal";
 const cotas = [
   {
     nome: "PRO",
-    preco: "R$ 9.000",
+    preco: "R$ 5.000",
     cor: "#4db8d4",
     bg: "rgba(77,184,212,0.06)",
     destaque: false,
@@ -27,11 +27,13 @@ const cotas = [
       "Visibilidade da marca no backdrop",
       "Visibilidade nas redes sociais",
       "4 convites para o evento",
+      "Exibição de vídeo institucional no telão do evento",
+      "Participação em 1 dos Painéis do evento",
     ],
   },
   {
     nome: "MASTER",
-    preco: "R$ 12.000",
+    preco: "R$ 15.000",
     cor: "#8dc63f",
     bg: "rgba(141,198,63,0.06)",
     destaque: true,
@@ -40,6 +42,7 @@ const cotas = [
       "Visibilidade da marca no backdrop",
       "Visibilidade nas redes sociais",
       "8 convites para o evento",
+      "Exibição de vídeo institucional no telão do evento",
     ],
   },
 ];

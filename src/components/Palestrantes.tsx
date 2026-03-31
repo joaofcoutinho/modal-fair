@@ -7,7 +7,7 @@ import Image from "next/image";
 const CORES = ["#f5a623", "#4db8d4", "#8dc63f", "#c0392b"];
 
 const palestrantes = [
-  { nome: "Adriana Junger Lacerda",           cargo: "Delegada da Alfândega da Receita Federal do Porto de Vitória",                   foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Adriana Junger Lacerda - Delegada da Alfândega da Receita Federal do Porto de Vitória.jpeg" },
+  { nome: "Adriana Junger Lacerda",           cargo: "Delegada da Alfândega da Receita Federal do Porto de Vitória",                   foto: "/fotonovaadriana.jpeg" },
   { nome: "Alexandre Billot",                 cargo: "Gerente Executivo da PORTOCEL",                                                  foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/ALEXANDRE BILLOT - Gerente Executivo da PORTOCEL.jpg" },
   { nome: "Alexandre Malta",                  cargo: "Diretor de Relações Institucionais da Agência NOVA ES",                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Alexandre Malta - Diretor de Relações Institucionais da Agência NOVA ES.jpeg" },
   { nome: "Anderson Abreu",                   cargo: "Diretor Executivo do Parklog-ES",                                                foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Abreu - Diretor Executivo do Parklog-ES.jpeg" },
@@ -57,6 +57,7 @@ function SpeakerCard({ nome, cargo, foto, cor }: { nome: string; cargo: string; 
           fill
           className="object-cover object-top"
           sizes="208px"
+          style={{ transform: "scale(1.2)", transformOrigin: "top center" }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(20,20,20,0.5) 0%, transparent 60%)" }} />
       </div>

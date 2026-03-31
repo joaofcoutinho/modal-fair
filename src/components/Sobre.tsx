@@ -22,6 +22,8 @@ const publico = [
   "Poder Público",
   "Sindicatos do Setor",
   "Advogados Especialistas",
+  "Atacado e Varejo",
+  "Setores Produtivos",
 ];
 
 export default function Sobre() {
@@ -98,7 +100,7 @@ export default function Sobre() {
                 Um evento feito para quem move o comércio exterior do estado
               </h3>
               <p className="text-white/58 text-sm font-light leading-relaxed">
-                Reunimos os principais atores do setor em um ambiente pensado para gerar resultados concretos e conexões duradouras.
+                Reunimos os principais atores do setor em um ambiente pensado para gerar resultados concretos e conexões duradouras — incluindo setores produtivos como atacado e varejo, fortalecendo a presença de entidades como Sincades e Avenpes.
               </p>
             </div>
             <div className="grid grid-cols-2 gap-3">

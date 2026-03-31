@@ -13,6 +13,9 @@ export default function Hero() {
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden" style={{ background: "#0f0f0f" }}>
 
       <style>{`
+        video::-webkit-media-controls { display: none !important; }
+        video::-webkit-media-controls-start-playback-button { display: none !important; -webkit-appearance: none; }
+        video::-webkit-media-controls-panel { display: none !important; }
         @keyframes hero-fade-up {
           from { opacity: 0; transform: translateY(28px); }
           to   { opacity: 1; transform: translateY(0); }
@@ -45,7 +48,7 @@ export default function Hero() {
         playsInline
         // @ts-expect-error webkit attr
         webkit-playsinline="true"
-        style={{ opacity: 0.85, animation: `hero-fade-in 1.2s ease 0.2s both` }}
+        style={{ opacity: 0.85, animation: `hero-fade-in 1.2s ease 0.2s both`, pointerEvents: "none" }}
       />
 
       {/* Overlay gradients */}
