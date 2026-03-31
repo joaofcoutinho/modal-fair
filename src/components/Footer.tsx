@@ -133,7 +133,6 @@ export default function Footer() {
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-6 flex flex-col sm:flex-row items-center justify-between gap-3 text-white/52 text-xs font-light">
           <p>© 2026 Modal Fair Aracruz. Todos os direitos reservados.</p>
-          <p>Desenvolvido com Next.js & TypeScript</p>
         </div>
       </div>
     </footer>
