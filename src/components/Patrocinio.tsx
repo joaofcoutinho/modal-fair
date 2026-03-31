@@ -43,6 +43,7 @@ const cotas = [
       "Visibilidade nas redes sociais",
       "8 convites para o evento",
       "Exibição de vídeo institucional no telão do evento",
+      "Participação em 1 dos Painéis do evento",
     ],
   },
 ];

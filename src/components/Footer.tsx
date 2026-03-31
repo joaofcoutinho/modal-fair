@@ -105,7 +105,6 @@ export default function Footer() {
               { file: "Mais logo.png", large: true },
               { file: "Mais logo-1.png" },
               { file: "Mais logo-2.png" },
-              { file: "Mais logo 4.png" },
               { file: "2.png" },
               { file: "logo-camara-aracruz.png" },
               { file: "logo-amear.png" },

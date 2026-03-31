@@ -13,13 +13,13 @@ const palestrantes = [
   { nome: "Anderson Abreu",                   cargo: "Diretor Executivo do Parklog-ES",                                                foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Abreu - Diretor Executivo do Parklog-ES.jpeg" },
   { nome: "Anderson Carvalho",                cargo: "Diretor Executivo do IMETAME LOGÍSTICA PORTO",                                   foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Carvalho - Diretor Executivo do IMETAME LOGÍSTICA PORTO .jpeg" },
   { nome: "Bruno Carlesso",                   cargo: "Diretor Jurídico da IMETAME",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Bruno Carlesso - Diretor Jurídico da IMETAME.jpeg" },
-  { nome: "Carla Rios do Amaral",             cargo: "Gerente Comercial da VPORTS",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Carla Rios Do Amaral - Gerente Comercial da VPORTS.jpeg" },
+  { nome: "Carla Rios do Amaral",             cargo: "Gerente Comercial da VPORTS",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Carla Rios Do Amaral - Gerente Comercial da VPORTS.jpeg", zoom: 1.5 },
   { nome: "Christiane Menezes",               cargo: "Gerente Executiva da Agência NOVA ES",                                           foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Christiane Menezes - Gerente Executiva da Agência NOVA ES.jpeg" },
   { nome: "Daniella Caldellas",               cargo: "Chefe da Unidade Regional da ANTAQ de Vitória-ES",                               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Daniella Caldellas - Chefe da Unidade Regional da ANTAQ de Vitória-ES.jpeg" },
   { nome: "Erimar Trindade",                  cargo: "Vice-Presidente do SINDIEX",                                                     foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Erimar Trindade - Vice-Presidente do SINDIEX.jpeg" },
   { nome: "Glegson Ninz",                     cargo: "Prof. do SENAC – FECOMÉRCIO",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Glegson Ninz - Prof. do SENAC - FECOMÉRCIO.jpeg" },
   { nome: "Henrique Mauri",                   cargo: "Founder e CEO da Dotcode",                                                       foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Henrique Mauri - Founder e CEO da Dotcode.jpg" },
-  { nome: "José Eduardo Farias de Azevedo",   cargo: "Secretário de Desenvolvimento Econômico da Prefeitura de Aracruz",               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/José Eduardo Farias de Azevedo - Secretário de Desenvolvimento Econômico da Prefeitura de Aracruz.jpeg" },
+{ nome: "José Eduardo Farias de Azevedo",   cargo: "Secretário de Desenvolvimento Econômico da Prefeitura de Aracruz",               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/José Eduardo Farias de Azevedo - Secretário de Desenvolvimento Econômico da Prefeitura de Aracruz.jpeg" },
   { nome: "Luciana Mattar",                   cargo: "Advogada Especialista em Direito Marítimo, Portuário e Aduaneiro",               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Luciana Mattar - Advogada Especialista em Direito Marítimo, Portuário e Aduaneiro.jpeg" },
   { nome: "Luciano Kelly do Nascimento",      cargo: "Advogado Especialista em Direito Marítimo e Portuário",                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Luciano Kelly do Nascimento - Advogado Especialista em Direito Marítimo e Portuário .jpeg" },
   { nome: "Marcus Modenesi Vicente",          cargo: "Advogado do MVLM Advogados Associados",                                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Marcus Modenesi Vicente - Advogado do MVLM Advogados Associados.jpeg" },
@@ -36,7 +36,7 @@ const mediadores = [
   { nome: "Abdo Filho",                   cargo: "Jornalista de A Gazeta",                                                           foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Abdo Filho - Jornalista de A Gazeta.jpeg" },
   { nome: "Carla Fregona",                cargo: "Advogada Especialista em Direito Marítimo",                                        foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Carla Fregona - Advogada Especialista em Direito Marítimo.jpeg" },
   { nome: "Eder Muller",                  cargo: "CEO da Convertido Marketing",                                                       foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Eder Muller - CEO da Convertido Marketing.jpeg" },
-  { nome: "Filipe Loureiro",              cargo: "Advogado e Subprocurador da Câmara Municipal de Aracruz",                          foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Filipe Loureiro - Advogado e Subprocurador da Câmara Municipal de Aracruz.jpeg" },
+  { nome: "Felipe Loureiro",              cargo: "Advogado e Subprocurador da Câmara Municipal de Aracruz",                          foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Filipe Loureiro - Advogado e Subprocurador da Câmara Municipal de Aracruz.jpeg" },
   { nome: "Guilherme Travaglia Loureiro", cargo: "Advogado e Procurador do Município de Aracruz",                                    foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Guilherme Travaglia Loureiro - Advogado e Procurador do Município de Aracruz .jpeg" },
   { nome: "Ícaro Dominisini",             cargo: "Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz", foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Ícaro Dominisini - Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz.jpeg" },
   { nome: "Larissa Viale Baroni",         cargo: "Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz",         foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Larissa Viale Baroni - Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz.jpeg" },
@@ -44,7 +44,7 @@ const mediadores = [
   { nome: "Sebastião Viganô Neto",        cargo: "Advogado Especialista em Direito Civil e Empresarial",                             foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Sebastião Viganô Neto - Advogado Especialista em Direito Civil e Empresarial.jpeg" },
 ];
 
-function SpeakerCard({ nome, cargo, foto, cor }: { nome: string; cargo: string; foto: string; cor: string }) {
+function SpeakerCard({ nome, cargo, foto, cor, zoom = 1.2 }: { nome: string; cargo: string; foto: string; cor: string; zoom?: number }) {
   return (
     <div
       className="flex-shrink-0 flex flex-col w-52"
@@ -57,7 +57,7 @@ function SpeakerCard({ nome, cargo, foto, cor }: { nome: string; cargo: string; 
           fill
           className="object-cover object-top"
           sizes="208px"
-          style={{ transform: "scale(1.2)", transformOrigin: "top center" }}
+          style={{ transform: `scale(${zoom})`, transformOrigin: "top center" }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(20,20,20,0.5) 0%, transparent 60%)" }} />
       </div>

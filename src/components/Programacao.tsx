@@ -65,7 +65,7 @@ const dia2: Item[] = [
       { nome: "Valéria Becalli", cargo: "Diretora Executiva da AMEAR" },
       { nome: "Bruno Carlesso", cargo: "Diretor Jurídico da IMETAME" },
     ],
-    mediadores: ["Maurício Xavier", "Filipe Loureiro"],
+    mediadores: ["Maurício Xavier", "Felipe Loureiro"],
     tipo: "painel",
   },
 ];
