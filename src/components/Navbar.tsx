@@ -71,7 +71,7 @@ export default function Navbar() {
           </nav>
 
           <a
-            href="#inscricao"
+            href="https://www.sympla.com.br/evento/modal-fair-aracruz-1-edicao-da-feira-de-comercio-exterior-logistica-e-portos-de-aracruz/3371335" target="_blank" rel="noopener noreferrer"
             className="hidden md:inline-flex items-center px-5 py-2 text-xs font-semibold tracking-wide uppercase rounded-full transition-all hover:opacity-80"
             style={{ background: "#f5a623", color: "#0f0f0f" }}
           >
@@ -101,7 +101,7 @@ export default function Navbar() {
               </a>
             ))}
             <a
-              href="#inscricao"
+              href="https://www.sympla.com.br/evento/modal-fair-aracruz-1-edicao-da-feira-de-comercio-exterior-logistica-e-portos-de-aracruz/3371335" target="_blank" rel="noopener noreferrer"
               onClick={() => setIsOpen(false)}
               className="mt-4 inline-flex items-center justify-center px-6 py-3 text-xs font-semibold tracking-wide uppercase rounded-full"
               style={{ background: "#f5a623", color: "#0f0f0f" }}

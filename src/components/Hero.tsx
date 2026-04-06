@@ -125,7 +125,7 @@ export default function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center gap-3">
           {[
-            { href: "#inscricao", label: "Garanta sua vaga", style: { background: "#f5a623", color: "#0f0f0f" }, delay: 0.85 },
+            { href: "https://www.sympla.com.br/evento/modal-fair-aracruz-1-edicao-da-feira-de-comercio-exterior-logistica-e-portos-de-aracruz/3371335", label: "Garanta sua vaga", style: { background: "#f5a623", color: "#0f0f0f" }, delay: 0.85 },
             { href: "https://wa.me/5527996008632", label: "Seja Patrocinador", delay: 0.95 },
             { href: "https://wa.me/552732452608", label: "Quero um Stand", delay: 1.05 },
           ].map((cta, i) => (
