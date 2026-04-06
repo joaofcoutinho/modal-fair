@@ -88,7 +88,14 @@ export default function Footer() {
         {/* Sponsors */}
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-8 mb-6">
           <p className="text-[11px] tracking-[0.4em] uppercase font-medium text-white/38 mb-5">Realização</p>
-          <p className="text-white/38 text-sm">Comissão de Eventos Modal Fair Aracruz</p>
+          <div className="flex flex-wrap items-center gap-6">
+            <p className="text-white/38 text-sm">Comissão de Eventos Modal Fair Aracruz</p>
+            <img
+              src="/realizador-modenese.png"
+              alt="Realizador"
+              style={{ height: 48, width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8 }}
+            />
+          </div>
         </div>
 
         <div style={{ borderTop: "1px solid rgba(255,255,255,0.06)" }} className="pt-6 mb-10">

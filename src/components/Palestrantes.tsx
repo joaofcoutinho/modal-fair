@@ -9,13 +9,13 @@ const CORES = ["#f5a623", "#4db8d4", "#8dc63f", "#c0392b"];
 const palestrantes = [
   { nome: "Adriana Junger Lacerda",           cargo: "Delegada da Alfândega da Receita Federal do Porto de Vitória",                   foto: "/fotonovaadriana.jpeg" },
   { nome: "Alexandre Billot",                 cargo: "Gerente Executivo da PORTOCEL",                                                  foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/ALEXANDRE BILLOT - Gerente Executivo da PORTOCEL.jpg" },
-  { nome: "Alexandre Malta",                  cargo: "Diretor de Relações Institucionais da Agência NOVA ES",                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Alexandre Malta - Diretor de Relações Institucionais da Agência NOVA ES.jpeg" },
+  { nome: "Alexandre Malta",                  cargo: "Diretor de Relações Institucionais da Agência NOVA ES",                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Alexandre Malta - Diretor de Relações Institucionais da Agência NOVA ES.jpeg", objectPos: "30% 35%" },
   { nome: "Anderson Abreu",                   cargo: "Diretor Executivo do Parklog-ES",                                                foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Abreu - Diretor Executivo do Parklog-ES.jpeg" },
-  { nome: "Anderson Carvalho",                cargo: "Diretor Executivo do IMETAME LOGÍSTICA PORTO",                                   foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Carvalho - Diretor Executivo do IMETAME LOGÍSTICA PORTO .jpeg" },
+  { nome: "Anderson Carvalho",                cargo: "Diretor Executivo do IMETAME LOGÍSTICA PORTO",                                   foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Anderson Carvalho - Diretor Executivo do IMETAME LOGÍSTICA PORTO .jpeg", zoom: 1.0 },
   { nome: "Bruno Carlesso",                   cargo: "Diretor Jurídico da IMETAME",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Bruno Carlesso - Diretor Jurídico da IMETAME.jpeg" },
-  { nome: "Carla Rios do Amaral",             cargo: "Gerente Comercial da VPORTS",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Carla Rios Do Amaral - Gerente Comercial da VPORTS.jpeg", zoom: 1.5 },
+  { nome: "Carla Rios do Amaral",             cargo: "Gerente Comercial da VPORTS",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Carla Rios Do Amaral - Gerente Comercial da VPORTS.jpeg", zoom: 1.2, objectPos: "center" },
   { nome: "Christiane Menezes",               cargo: "Gerente Executiva da Agência NOVA ES",                                           foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Christiane Menezes - Gerente Executiva da Agência NOVA ES.jpeg" },
-  { nome: "Daniella Caldellas",               cargo: "Chefe da Unidade Regional da ANTAQ de Vitória-ES",                               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Daniella Caldellas - Chefe da Unidade Regional da ANTAQ de Vitória-ES.jpeg" },
+  { nome: "Daniella Caldellas",               cargo: "Chefe da Unidade Regional da ANTAQ de Vitória-ES",                               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Daniella Caldellas - Chefe da Unidade Regional da ANTAQ de Vitória-ES.jpeg", zoom: 1.0 },
   { nome: "Erimar Trindade",                  cargo: "Vice-Presidente do SINDIEX",                                                     foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Erimar Trindade - Vice-Presidente do SINDIEX.jpeg" },
   { nome: "Glegson Ninz",                     cargo: "Prof. do SENAC – FECOMÉRCIO",                                                    foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Glegson Ninz - Prof. do SENAC - FECOMÉRCIO.jpeg" },
   { nome: "Henrique Mauri",                   cargo: "Founder e CEO da Dotcode",                                                       foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Henrique Mauri - Founder e CEO da Dotcode.jpg" },
@@ -27,8 +27,8 @@ const palestrantes = [
   { nome: "Paulo Alves",                      cargo: "Diretor Executivo do TERCA ZILLI ARMAZÉNS GERAIS",                               foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Paulo Alves - Diretor Executivo do TERCA ZILLI ARMAZÉNS GERAIS.jpeg" },
   { nome: "Rafael Henrique G. T. de Freitas", cargo: "Especialista do COAL – Conselho de Assuntos Legislativos da FINDES",             foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Rafael Henrique G. T. De Freitas - Especialista do COAL - Conselho de Assuntos Legislativos da FINDES.jpeg" },
   { nome: "Roberta Kato",                     cargo: "CEO da Kato Soluções Empresariais",                                              foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Roberta Kato - CEO da Kato Soluções Empresariais.jpeg" },
-  { nome: "Samir Nemer",                      cargo: "Especialista em Direito Tributário do Furtado Nemer Advogados",                  foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Samir Nemer - Especialista em Direito Tributário do Furtado Nemer Advogados.jpeg" },
-  { nome: "Sidemar Acosta",                   cargo: "Presidente do SINDIEX",                                                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Sidemar Acosta - Presidente do SINDIEX.jpeg" },
+  { nome: "Samir Nemer",                      cargo: "Especialista em Direito Tributário do Furtado Nemer Advogados",                  foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Samir Nemer - Especialista em Direito Tributário do Furtado Nemer Advogados.jpeg", zoom: 1.0 },
+  { nome: "Sidemar Acosta",                   cargo: "Presidente do SINDIEX",                                                          foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/Sidemar Acosta - Presidente do SINDIEX.jpeg", zoom: 1.0 },
   { nome: "Valéria Becali",                   cargo: "Diretora Executiva da AMEAR – Associação dos Empresários de Aracruz e Região",   foto: "/FOTO DOS PALESTRANTES 2/FOTOS DOS PALESTRANTES/VALÉRIA BECALI - Diretora Executiva da AMEAR -Associação dos Empresários de Aracruz e Região.jpg" },
 ];
 
@@ -38,13 +38,13 @@ const mediadores = [
   { nome: "Eder Muller",                  cargo: "CEO da Convertido Marketing",                                                       foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Eder Muller - CEO da Convertido Marketing.jpeg" },
   { nome: "Felipe Loureiro",              cargo: "Advogado e Subprocurador da Câmara Municipal de Aracruz",                          foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Filipe Loureiro - Advogado e Subprocurador da Câmara Municipal de Aracruz.jpeg" },
   { nome: "Guilherme Travaglia Loureiro", cargo: "Advogado e Procurador do Município de Aracruz",                                    foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Guilherme Travaglia Loureiro - Advogado e Procurador do Município de Aracruz .jpeg" },
-  { nome: "Ícaro Dominisini",             cargo: "Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz", foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Ícaro Dominisini - Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz.jpeg" },
-  { nome: "Larissa Viale Baroni",         cargo: "Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz",         foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Larissa Viale Baroni - Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz.jpeg" },
+  { nome: "Ícaro Dominisini",             cargo: "Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz", foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Ícaro Dominisini - Advogado Especialista em Direito Tributário e Procurador do Município de Aracruz.jpeg", objectPos: "35% 25%", zoom: 1.8 },
+  { nome: "Larissa Viale Baroni",         cargo: "Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz",         foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Larissa Viale Baroni - Advogada e Secretária de Desenvolvimento Urbano da Prefeitura de Aracruz.jpeg", objectPos: "50% 20%" },
   { nome: "Maurício Xavier Nascimento",   cargo: "Advogado e Procurador de carreira da Câmara Municipal de Aracruz",                 foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Maurício Xavier Nascimento - Advogado e Procurador de carreira da Câmara Municipal de Aracruz.jpeg" },
   { nome: "Sebastião Viganô Neto",        cargo: "Advogado Especialista em Direito Civil e Empresarial",                             foto: "/MEDIADORES MODAL FAIR 1/MEDIADORES DA MODAL FAIR ARACRUZ/Sebastião Viganô Neto - Advogado Especialista em Direito Civil e Empresarial.jpeg" },
 ];
 
-function SpeakerCard({ nome, cargo, foto, cor, zoom = 1.2 }: { nome: string; cargo: string; foto: string; cor: string; zoom?: number }) {
+function SpeakerCard({ nome, cargo, foto, cor, zoom = 1.2, objectPos = "top center" }: { nome: string; cargo: string; foto: string; cor: string; zoom?: number; objectPos?: string }) {
   return (
     <div
       className="flex-shrink-0 flex flex-col w-52"
@@ -55,9 +55,9 @@ function SpeakerCard({ nome, cargo, foto, cor, zoom = 1.2 }: { nome: string; car
           src={foto}
           alt={nome}
           fill
-          className="object-cover object-top"
-          sizes="208px"
-          style={{ transform: `scale(${zoom})`, transformOrigin: "top center" }}
+          className="object-cover"
+          sizes="(max-width: 768px) 208px, 416px"
+          style={{ transform: `scale(${zoom})`, transformOrigin: objectPos, objectPosition: objectPos }}
         />
         <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(20,20,20,0.5) 0%, transparent 60%)" }} />
       </div>

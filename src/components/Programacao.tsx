@@ -165,7 +165,7 @@ export default function Programacao() {
               <span className="text-[11px] tracking-[0.4em] uppercase font-semibold" style={{ color: "#4db8d4" }}>Programação Oficial</span>
             </div>
             <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-              Três dias de<br />
+              Dois dias de<br />
               <span style={{ color: "#4db8d4" }}>debates e conexões</span>
             </h2>
           </div>
