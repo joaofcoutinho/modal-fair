@@ -59,7 +59,7 @@ export default function Stand() {
             muted
             loop
             playsInline
-            // @ts-expect-error webkit attr
+            // @ts-ignore
             webkit-playsinline="true"
             className="absolute inset-0 w-full h-full object-cover"
             style={{ filter: "blur(2px) saturate(0.6)" }}

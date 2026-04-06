@@ -46,7 +46,7 @@ export default function Hero() {
         muted
         loop
         playsInline
-        // @ts-expect-error webkit attr
+        // @ts-ignore
         webkit-playsinline="true"
         style={{ opacity: 0.85, animation: `hero-fade-in 1.2s ease 0.2s both`, pointerEvents: "none" }}
       />
