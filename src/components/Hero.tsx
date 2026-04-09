@@ -123,17 +123,27 @@ export default function Hero() {
         </div>
 
         {/* CTAs */}
-        <div className="flex flex-col sm:flex-row items-center gap-3" style={fadeUp(0.85)}>
-          <a
-            href="https://wa.me/5527996008632"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-8 py-3 text-sm font-medium rounded-full transition-all flex items-center gap-2 hover:opacity-80"
-            style={{ border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }}
-          >
-            <MessageCircle size={14} />
-            Seja Patrocinador
-          </a>
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          {[
+            { href: "https://www.sympla.com.br/evento/modal-fair-aracruz-1-edicao-da-feira-de-comercio-exterior-logistica-e-portos-de-aracruz/3371335", label: "Garanta sua vaga", style: { background: "#f5a623", color: "#0f0f0f" }, delay: 0.85 },
+            { href: "https://wa.me/5527996008632", label: "Seja Patrocinador", delay: 0.95 },
+            { href: "https://wa.me/552732452608", label: "Quero um Stand", delay: 1.05 },
+          ].map((cta, i) => (
+            <a
+              key={i}
+              href={cta.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-8 py-3 text-sm font-medium rounded-full transition-all flex items-center gap-2 hover:opacity-80"
+              style={{
+                ...(cta.style ?? { border: "1px solid rgba(255,255,255,0.12)", color: "rgba(255,255,255,0.6)" }),
+                ...fadeUp(cta.delay),
+              }}
+            >
+              {i > 0 && <MessageCircle size={14} />}
+              {cta.label}
+            </a>
+          ))}
         </div>
       </div>
 
