@@ -93,7 +93,7 @@ export default function Footer() {
             <img
               src="/realizador-modenese.png"
               alt="Realizador"
-              style={{ height: 48, width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8 }}
+              style={{ height: 64, width: "auto", objectFit: "contain", filter: "brightness(0) invert(1)", opacity: 0.8 }}
             />
           </div>
         </div>

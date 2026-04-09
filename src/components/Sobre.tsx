@@ -3,7 +3,7 @@ import Reveal from "./Reveal";
 
 const stats = [
   { value: "500+", label: "Participantes por dia", cor: "#f5a623" },
-  { value: "3",    label: "Dias de evento",        cor: "#8dc63f" },
+  { value: "2",    label: "Dias de evento",        cor: "#8dc63f" },
   { value: "5",    label: "Painéis temáticos",     cor: "#4db8d4" },
   { value: "1ª",   label: "Edição em Aracruz",     cor: "#c0392b" },
 ];
